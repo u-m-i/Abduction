@@ -1,0 +1,6 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement style="flex-grow: 1; color: rgb(0, 0, 0); background-color: rgba(0, 0, 0, 0.51);">
+        <ui:Label text="Description" display-tooltip-when-elided="true" style="-unity-font: url(&apos;project://database/Assets/Art/Fonts/Bourbon.ttf?fileID=12800000&amp;guid=1dee459005090b64d8fba8825efeb519&amp;type=3#Bourbon&apos;); background-color: rgba(255, 255, 255, 0); -unity-font-definition: initial; height: 360px; -unity-text-align: middle-center; font-size: 23px; -unity-font-style: bold;" />
+        <ui:Button text="Exit" display-tooltip-when-elided="true" name="button" style="-unity-text-align: lower-center; left: 40%; top: 41%; width: 161px; right: auto;" />
+    </ui:VisualElement>
+</ui:UXML>
