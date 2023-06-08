@@ -5,10 +5,13 @@ namespace Abduction
     public class Poster : MonoBehaviour
     {
 
+        [SerializeField]
+        private GameObject UI; 
+
         /// 
-        private void OnMouseOver()
+        private void OnMouseDown()
         {
-            Debug.Log("Click E for this shit to appear");
+            UI.SetActive(true);
         }
     }
 }
