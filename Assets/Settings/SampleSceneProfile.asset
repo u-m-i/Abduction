@@ -68,17 +68,10 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-<<<<<<< Updated upstream
-    m_Value: 0.28
-  smoothness:
-    m_OverrideState: 1
-    m_Value: 0.385
-=======
     m_Value: 0.144
   smoothness:
     m_OverrideState: 1
     m_Value: 1
->>>>>>> Stashed changes
   rounded:
     m_OverrideState: 1
     m_Value: 1
