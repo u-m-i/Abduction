@@ -21,28 +21,43 @@ namespace Abduction.Test
         private AudioClip[] stages;
 
 
-        private LinkedList<AudioClip> clipHanger;
+        private IEnumerator<AudioClip> clipHanger;
 
         ///<summary>
         /// Creates the Linked List for the audio stages.
         ///</summary>
-        private void FormatArrayToLinked() =>
-            clipHanger = new LinkedList<AudioClip>(stages);
+        private void FormatArrayToLinked()  =>
+            clipHanger = stages.GetEnumerator() as IEnumerator<AudioClip>;
 
+
+        ///<summary>
+        /// C
+        ///</summary>
         private void Start()
         {
             FormatArrayToLinked();
 
-            // Starts with the first
             PlayLoop();
         }
 
+
+        ///<summary>
+        /// 
+        ///</summary>
         private void PlayLoop()
         {
             // Play in a loop the current node.
 
-                
         }
 
+
+        ///<summary>
+        ///  
+        ///</summary>
+        private void OnTriggerEnter(Collider other)
+        {
+            // Activate the animation
+            
+        }
     }
 }
