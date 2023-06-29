@@ -1,5 +1,5 @@
 using UnityEngine;
-using System.Collections.Generic;
+using System.Collections;
 
 
 /// The character enters a determined middle space and then the audio changes.
@@ -15,25 +15,31 @@ namespace Abduction.Test
     ///</summary>
     public class Modulizer : MonoBehaviour
     {
+        #region Inspector
 
         [SerializeField]
         [Tooltip("Sort the audio clips in ascendancy order.")]
         private AudioClip[] stages;
 
+        [SerializeField,Space(3)]
+        private AudioSource audioSource;
 
-        private IEnumerator<AudioClip> clipHanger;
+        #endregion
+
+        private IEnumerator clipHanger;
+
 
         ///<summary>
         /// Creates the Linked List for the audio stages.
         ///</summary>
         private void FormatArrayToLinked()  =>
-            clipHanger = stages.GetEnumerator() as IEnumerator<AudioClip>;
+            clipHanger = stages.GetEnumerator();
 
 
         ///<summary>
         /// C
         ///</summary>
-        private void Start()
+        private void Awake()
         {
             FormatArrayToLinked();
 
@@ -46,7 +52,13 @@ namespace Abduction.Test
         ///</summary>
         private void PlayLoop()
         {
+
+            clipHanger.MoveNext();
+
             // Play in a loop the current node.
+            audioSource.clip = (AudioClip) clipHanger.Current;
+
+            audioSource.Play();
 
         }
 
@@ -56,8 +68,8 @@ namespace Abduction.Test
         ///</summary>
         private void OnTriggerEnter(Collider other)
         {
+            PlayLoop();
             // Activate the animation
-            
         }
     }
 }
