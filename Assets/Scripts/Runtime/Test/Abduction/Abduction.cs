@@ -51,15 +51,14 @@ namespace Nuruk.Test
 
             while(maximum >= 0 )
             {
-                yield return new WaitForSeconds(1.4f);
 
-                subtrahend += 0.4f;
+                subtrahend += 0.00035f;
                 maximum -= subtrahend;
 
                 // Todo: Use the limit of the center.x to sum with an epsilon until is equal or major.  
                 draggee.position = new Vector3(draggee.position.x, (draggee.position.y + subtrahend),draggee.position.z);
 
-                // yield return new WaitForFixedUpdate();
+                yield return new WaitForFixedUpdate();
             }
 
         }
