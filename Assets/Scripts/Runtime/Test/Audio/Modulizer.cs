@@ -36,9 +36,6 @@ namespace Abduction.Test
             clipHanger = stages.GetEnumerator();
 
 
-        ///<summary>
-        /// C
-        ///</summary>
         private void Awake()
         {
             FormatArrayToLinked();
@@ -63,13 +60,10 @@ namespace Abduction.Test
         }
 
 
-        ///<summary>
-        ///  
-        ///</summary>
         private void OnTriggerEnter(Collider other)
         {
             PlayLoop();
-            // Activate the animation
+
         }
     }
 }
