@@ -15,17 +15,23 @@ namespace Nuruk.Test
         [SerializeField,Space(4)]
         private Transform draggee;
 
-        private float maximum = 10f;
+        private float realLimit;
 
+        private float criticX;
+
+        private float holderX;
+
+        private Vector3 holderVec;
+
+        private float epsilon = 0.00035f;
 
         private void Awake()
         {
             Renderer r = GetComponent<Renderer>();
 
-            maximum = transform.position.y;
+            realLimit = transform.position.y;
 
-            Debug.Log(r.bounds.max);
-
+            criticX = r.bounds.center.x;
         }
 
 
@@ -46,20 +52,34 @@ namespace Nuruk.Test
         private IEnumerator Abduct()
         {
 
-            float subtrahend = 0;
+            holderX = 0;
 
-
-            while(maximum >= 0 )
+            // Error in while condition
+            while(holderX >= criticX )
             {
 
-                subtrahend += 0.00035f;
-                maximum -= subtrahend;
+                CalculateCritialLimit();
 
-                // Todo: Use the limit of the center.x to sum with an epsilon until is equal or major.  
-                draggee.position = new Vector3(draggee.position.x, (draggee.position.y + subtrahend),draggee.position.z);
+                draggee.position += holderVec;
 
                 yield return new WaitForFixedUpdate();
             }
+
+        }
+
+
+        /// Calculate y  given the x and advance x in time
+        // The final output is a Vector3
+        private void CalculateCritialLimit()
+        {
+
+            // Increments X by epsilon
+            holderX += epsilon;
+
+            //
+
+            holderVec.y = 0f;
+            holderVec.z = 0f;
 
         }
     }
