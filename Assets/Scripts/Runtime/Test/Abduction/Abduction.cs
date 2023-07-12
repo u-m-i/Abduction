@@ -15,23 +15,26 @@ namespace Nuruk.Test
         [SerializeField,Space(4)]
         private Transform draggee;
 
-        private float realLimit;
+        private float criticY;
 
         private float criticX;
 
         private float holderX;
 
+        private float holderY;
+
+        private Vector3 criticPoint;
+
         private Vector3 holderVec;
 
-        private float epsilon = 0.00035f;
+        private float epsilon = 0.000035f;
 
         private void Awake()
         {
             Renderer r = GetComponent<Renderer>();
 
-            realLimit = transform.position.y;
+            criticPoint = new Vector3(r.bounds.center.x, transform.position.y, r.bounds.center.z);
 
-            criticX = r.bounds.center.x;
         }
 
 
@@ -41,9 +44,12 @@ namespace Nuruk.Test
             if(draggee)
                 return;
 
+
             other.gameObject.GetComponent<Rigidbody>().useGravity = false;
 
             draggee = other.transform;
+
+            draggee.LookAt(transform,new Vector3(0,1,0));
 
             StartCoroutine(Abduct());
 
@@ -52,9 +58,8 @@ namespace Nuruk.Test
         private IEnumerator Abduct()
         {
 
-            holderX = 0;
+            holderX = holderY= 0;
 
-            // Error in while condition
             while(holderX >= criticX )
             {
 
@@ -65,6 +70,8 @@ namespace Nuruk.Test
                 yield return new WaitForFixedUpdate();
             }
 
+            yield break;
+
         }
 
 
@@ -72,14 +79,6 @@ namespace Nuruk.Test
         // The final output is a Vector3
         private void CalculateCritialLimit()
         {
-
-            // Increments X by epsilon
-            holderX += epsilon;
-
-            //
-
-            holderVec.y = 0f;
-            holderVec.z = 0f;
 
         }
     }
