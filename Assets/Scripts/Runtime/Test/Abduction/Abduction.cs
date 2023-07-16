@@ -12,8 +12,10 @@ namespace Nuruk.Test
         [SerializeField,Space(4)]
         private GameObject inputReceptor;
 
-        [SerializeField,Space(4)]
         private Transform draggee;
+
+        private Rigidbody holderBody;
+
 
         private float criticY;
 
@@ -27,12 +29,14 @@ namespace Nuruk.Test
 
         private Vector3 holderVec;
 
+
         private float epsilon = 0.000035f;
 
         private void Awake()
         {
             Renderer r = GetComponent<Renderer>();
 
+            // Making the final point of the abduction ray.
             criticPoint = new Vector3(r.bounds.center.x, transform.position.y, r.bounds.center.z);
 
         }
@@ -44,8 +48,9 @@ namespace Nuruk.Test
             if(draggee)
                 return;
 
+            holderBody = other.gameObject.GetComponent<Rigidbody>();
 
-            other.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            holderBody.useGravity = false;
 
             draggee = other.transform;
 
@@ -58,10 +63,14 @@ namespace Nuruk.Test
         private IEnumerator Abduct()
         {
 
-            holderX = holderY= 0;
+            holderVec = new Vector3(0.035f, 0.15f, 0.035f);
 
-            while(holderX >= criticX )
+            // Create the compensatory value for the x value
+            AxisDirection();
+
+            while(draggee.position.y <= criticPoint .y)
             {
+
 
                 CalculateCritialLimit();
 
@@ -70,7 +79,21 @@ namespace Nuruk.Test
                 yield return new WaitForFixedUpdate();
             }
 
+
+
             yield break;
+
+        }
+
+        private void AxisDirection()
+        {
+
+            // Factor to reduce
+            if(draggee.position.x > criticPoint.x)
+                holderVec.x *= -1;
+
+            // Factor to increase
+            holderVec.x *= 1;
 
         }
 
@@ -78,8 +101,7 @@ namespace Nuruk.Test
         /// Calculate y  given the x and advance x in time
         // The final output is a Vector3
         private void CalculateCritialLimit()
-        {
-
+        {   
         }
     }
 }
