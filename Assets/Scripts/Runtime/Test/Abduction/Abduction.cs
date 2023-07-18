@@ -79,22 +79,32 @@ namespace Nuruk.Test
                 yield return new WaitForFixedUpdate();
             }
 
+            holderBody.useGravity = true;
 
+            draggee = null;
 
             yield break;
 
         }
 
+        /// Factor to reduce
         private void AxisDirection()
         {
 
-            // Factor to reduce
+
+            Debug.Log($"{draggee.position.x} > {criticPoint.x}");
+
             if(draggee.position.x > criticPoint.x)
+            {
                 holderVec.x *= -1;
+                Debug.Log("X menor than the x center");
+                return;
+            }
 
             // Factor to increase
             holderVec.x *= 1;
 
+            Debug.Log("X major than the x center");
         }
 
 
