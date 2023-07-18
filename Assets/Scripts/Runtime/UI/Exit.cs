@@ -12,7 +12,6 @@ namespace Nuruk.UI
         private void Start()
         {
 
-
             VisualElement root = uxml.rootVisualElement;
 
             Button button = root.Q<Button>("exit-button");
