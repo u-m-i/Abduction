@@ -26,7 +26,7 @@ namespace Nuruk.Test
             Renderer r = GetComponent<Renderer>();
 
             // Making the final point of the abduction ray.
-            criticPoint = new Vector3(r.bounds.center.x, transform.position.y, r.bounds.center.z);
+            criticPoint = new Vector3(r.bounds.center.x, (transform.position.y + 5f), r.bounds.center.z);
 
         }
 
@@ -61,8 +61,6 @@ namespace Nuruk.Test
 
             while(draggee.position.y <= criticPoint .y)
             {
-
-                Debug.Log("Running");
 
                 CalculateCritialLimit();
 

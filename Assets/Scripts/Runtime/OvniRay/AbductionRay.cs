@@ -1,46 +1,108 @@
+
 using UnityEngine;
 using System.Collections;
 
 namespace Abduction
 {
-    
     public class AbductionRay : MonoBehaviour
     {
 
-        private Transform alienT;
+        [SerializeField,Space(4)]
+        private GameObject inputReceptor;
 
-        private Vector3 heightBuffer;
+        private Transform draggee;
+
+        private Rigidbody holderBody;
+
+
+        private Vector3 criticPoint;
+
+        private Vector3 holderVec;
+
+
+        private void Awake()
+        {
+            Renderer r = GetComponent<Renderer>();
+
+            // Making the final point of the abduction ray.
+            criticPoint = new Vector3(r.bounds.center.x, (transform.position.y + 5f), r.bounds.center.z);
+
+        }
 
 
         private void OnTriggerEnter(Collider other)
         {
-            alienT = other.transform;
 
-            alienT.gameObject.GetComponent<Rigidbody>().useGravity = false;
+            if(draggee)
+                return;
+
+            GetComponent<Collider>().enabled = false;
+
+            holderBody = other.gameObject.GetComponent<Rigidbody>();
+
+            holderBody.useGravity = false;
+
+            draggee = other.transform;
+
+            draggee.LookAt(transform,new Vector3(0,1,0));
 
             StartCoroutine(Abduct());
-        }
+
+        } 
 
         private IEnumerator Abduct()
         {
-            // 10m   maxium height
 
-            float maxium = 10f;
+            holderVec = new Vector3(0.035f, 0.15f, -0.035f);
 
-            float subtrahend = 0;
+            // Create the compensatory value for the x value
+            AxisDirection();
 
-
-            while(maxium >= 0 )
+            while(draggee.position.y <= criticPoint .y)
             {
-                yield return new WaitForSeconds(1.4f);
 
-                subtrahend += 0.4f;
-                maxium -= subtrahend;
+                CalculateCritialLimit();
 
-                alienT.position = new Vector3(alienT.position.x, (alienT.position.y + subtrahend),alienT.position.z);
+                draggee.position += holderVec;
 
                 yield return new WaitForFixedUpdate();
             }
+
+            holderBody.useGravity = true;
+
+            draggee = null;
+
+            yield break;
+
+        }
+
+
+        /// Factor to reduce
+        private void AxisDirection()
+        {
+
+            if(draggee.position.x > criticPoint.x)
+            {
+                holderVec.x *= -1;
+                return;
+            }
+
+            // Factor to increase
+            holderVec.x *= 1;
+
+        }
+
+
+        /// Calculate y  given the x and advance x in time
+        // The final output is a Vector3
+        private void CalculateCritialLimit()
+        {
+
+            if((int) draggee.position.x == (int)criticPoint.x)
+                holderVec.x = 0;
+
+            if((int) draggee.position.z == (int)criticPoint.z)
+                holderVec.z = 0;
 
         }
     }
