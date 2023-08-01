@@ -7,14 +7,15 @@
 	<title>{{{ PRODUCT_NAME }}}</title>
 	<!-- <link rel="shortcut icon" href="static/favicon.ico"> -->
 	<link rel="stylesheet" href="static/style.css">
+	<script src="./vendor/jquery.min.js"></script>
 </head>
 
 <body>
 
-	<div class="loader-canvas">
-		<div class="container-loader">
-			<img src="static/Logo.png" alt="logo" width="200">
-			<span class="loading-bar"></span>
+	<div class="container">
+		<img class="center" src="static/Logo.png" alt="logo" width="200">
+		<div class="earth">
+			<div class="moon"></div>
 		</div>
 	</div>
 
@@ -44,12 +45,10 @@
 		};
 
 		var canvas = document.querySelector("#unity-canvas");
-		var loadingBar = document.querySelector(".loading-bar");
 
 #if BACKGROUND_FILENAME
 		canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
 #endif
-		loadingBar.style.display = "block";
 
 		var script = document.createElement("script");
 		script.src = loaderUrl;
@@ -59,9 +58,8 @@
 			createUnityInstance(canvas, config, (progress) =>
 			{
 				if(progress == 1)
-					jQuery(".loader-canvas").fadeOut("slow");
+					jQuery(".container").fadeOut("slow");
 
-				loadingBar.style.width = 100 * progress + "%";
 
 			}).then((unityInstance2) =>
 			{

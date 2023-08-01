@@ -7,62 +7,71 @@ using System.Collections;
     // But the player can not go back.  
 
 
-namespace Abduction.Test
+namespace Abduction.Test.Audio
 {
 
     ///<summary>
-    /// Percieved the player position and fades between files. 
+    /// Plays the music with transitions
     ///</summary>
     public class Modulizer : MonoBehaviour
     {
         #region Inspector
-
-        [SerializeField]
-        [Tooltip("Sort the audio clips in ascendancy order.")]
-        private AudioClip[] stages;
 
         [SerializeField,Space(3)]
         private AudioSource audioSource;
 
         #endregion
 
-        private IEnumerator clipHanger;
+        #region REMOVE
 
-
-        ///<summary>
-        /// Creates the Linked List for the audio stages.
-        ///</summary>
-        private void FormatArrayToLinked()  =>
-            clipHanger = stages.GetEnumerator();
-
-
-        private void Awake()
+        private void Start()
         {
-            FormatArrayToLinked();
-
-            PlayLoop();
+            PlayMusic();
         }
 
+        #endregion
+
 
         ///<summary>
-        /// 
+        /// Play the current stage ambient music. 
         ///</summary>
-        private void PlayLoop()
+        private void PlayMusic()
         {
 
-            clipHanger.MoveNext();
-
-            // Play in a loop the current node.
-            audioSource.clip = (AudioClip) clipHanger.Current;
+            audioSource.clip = AudioManager.Instance.currentStage.clip;
 
             audioSource.Play();
 
         }
 
 
-        private void OnTriggerEnter(Collider other)
+        private IEnumerator FadeIn()
         {
-            PlayLoop();
+            while(audioSource.volume <= 0)
+            {
+
+                audioSource.volume -= 0.034f;
+
+                yield return new WaitForFixedUpdate();
+
+            }
+
+            // Play the next ambient music
+            PlayMusic();
+
+        }
+
+
+        private IEnumerator FadeOut()
+        {
+            while(audioSource.volume >= 0.84f)
+            {
+
+                audioSource.volume += 0.034f;
+
+                yield return new WaitForFixedUpdate();
+
+            }
 
         }
     }
