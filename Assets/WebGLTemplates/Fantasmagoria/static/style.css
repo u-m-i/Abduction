@@ -1,4 +1,9 @@
 
+:root
+{
+  --root-color: #fff9b9;
+}
+
 .container
 {
   font-size: 10px;
@@ -7,7 +12,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #c8c8c8;
+  background-color: #191919;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,7 +53,7 @@
 
   body
   {
-  background-color: #c8c8c8;
+  background-color: #1a1a1a;
   line-height: 1;
   }
 
@@ -60,6 +65,12 @@
   position: absolute;
   width: 200px;
   height: 200px;
+
+  border-radius: 100%;
+
+
+  box-shadow: #191919;
+
 }
 
 
@@ -67,7 +78,7 @@
   {
   position: absolute;
   border-style: solid;
-  border-color:  #000 transparent transparent transparent;
+  border-color:  var(--root-color) transparent transparent transparent;
   border-width: 0.2em 0.2em 0 0;
   border-radius: 50%;
 }
@@ -104,7 +115,7 @@
   right:3.8em;
   width: 3em;
   height: 3em;
-  background-color: #101010;
+  background-color: var(--root-color);
 }
 
 .moon::before
@@ -113,7 +124,7 @@
   right: 0.2em;
   width: 1.2em;
   height: 1.2em;
-  background-color:  #101010;
+  background-color:  var(--root-color);
 }
 
 @keyframes orbit
