@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Ship/Abduction.unity
-    guid: 68e82e5aad805504abcb3a8ded2f2a26
+    path: Assets/Scenes/Test/Abduction/Abduction.unity
+    guid: 886e2df84d81da34ab38d22c582a37aa
   m_configObjects: {}
