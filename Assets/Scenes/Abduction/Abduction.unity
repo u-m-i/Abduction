@@ -55714,6 +55714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputReceptor: {fileID: 0}
+  minusOne: 1024
 --- !u!64 &1688228663
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -55946,8 +55947,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703780929}
-  m_LocalRotation: {x: -0.03201201, y: -0.35625827, z: -0.012008106, w: 0.9337618}
-  m_LocalPosition: {x: 107.4133, y: -25.549223, z: -119.99586}
+  m_LocalRotation: {x: 0.030226499, y: 0.964826, z: -0.12534973, w: 0.22909522}
+  m_LocalPosition: {x: 50.703957, y: 5.3361135, z: 15.316479}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

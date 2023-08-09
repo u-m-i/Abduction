@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Programiz Pro" />
+    <meta property="og:title" content="Programiz Pro" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image:url" content="/img/social-media.png" />
+
+    <meta property="twitter:title" content="Programiz Pro">
+    <meta property="twitter:description" content=" Learn to Code.">
+    <meta property="twitter:image" content="/img/social-media.png">
+    <meta property="twitter:card" content="photo">
+    <meta property="twitter:url" content="https://dev.app.programiz.pro/">
+
+    <meta itemprop="name" content="Programiz Pro">
+    <meta itemprop="description" content=" Learn to Code.">
+    <meta itemprop="image" content="/img/social-media.png">
+
+    <link rel="apple-touch-icon" href="/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>Programiz PRO</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer',"GTM-KWWQNXJ");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- ProfitWell -->
+    <script id="profitwell-js" data-pw-auth="e97e78d919e451933783fe3cf37877ff">
+      /* DO NOT DELETE - this code is used to accept our payments or send data to ProfitWell*/
+      (function(i,s,o,g,r,a,m){i[o]=i[o]||function(){(i[o].q=i[o].q||[]).push(arguments)};
+      a=s.createElement(g);m=s.getElementsByTagName(g)[0];a.async=1;a.src=r+'?auth='+
+      s.getElementById(o+'-js').getAttribute('data-pw-auth');m.parentNode.insertBefore(a,m);
+      })(window,document,'profitwell','script','https://public.profitwell.com/js/profitwell.js');
+    </script>
+    <!-- End ProfitWell -->
+
+    <!-- Google Analytics4 tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id="""></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config',"""");
+    </script>
+    <!-- End Google Analytics4 tag -->
+
+    <!-- Google UA Analytics tag -->
+    <script  src="https://www.googletagmanager.com/gtag/js?id=UA-36675496-5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config',"UA-36675496-5",{'send_page_view': false});
+    </script>
+    <!-- End Google UA Analytics tag -->
+
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.1/full/pyodide.js" async ></script>
+
+    <script type="module" crossorigin src="/assets/index-c23606a4.js"></script>
+    <link rel="stylesheet" href="/assets/index-3e2865e2.css">
+  </head>
+  <body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe title="google-tag-manager" src="https://www.googletagmanager.com/ns.html?id=GTM-KWWQNXJ"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+    <script src="https://cdn.paddle.com/paddle/paddle.js"></script>
+    <script>window.require = () => {}</script>
+    <script>window.module = () => {}</script>
+    
+  </body>
+</html>

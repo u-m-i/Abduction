@@ -1,6 +1,7 @@
-
+using System;
 using UnityEngine;
 using System.Collections;
+using System.Runtime.CompilerServices;
 
 namespace Abduction
 {
@@ -9,6 +10,9 @@ namespace Abduction
 
         [SerializeField,Space(4)]
         private GameObject inputReceptor;
+
+        [SerializeField,Space(4)]
+        private int minusOne = -256;
 
         private Transform draggee;
 
@@ -19,10 +23,16 @@ namespace Abduction
 
         private Vector3 holderVec;
 
+        private Renderer r;
+
+
+
 
         private void Awake()
         {
-            Renderer r = GetComponent<Renderer>();
+
+
+            r = GetComponent<Renderer>();
 
             // Making the final point of the abduction ray.
             criticPoint = new Vector3(r.bounds.center.x, (transform.position.y + 5f), r.bounds.center.z);
@@ -44,7 +54,9 @@ namespace Abduction
 
             draggee = other.transform;
 
-            draggee.LookAt(transform,new Vector3(0,1,0));
+            // Math.Abs(dragge.x) - 
+
+            //draggee.LookAt(transform,new Vector3(0,1,0));
 
             StartCoroutine(Abduct());
 
