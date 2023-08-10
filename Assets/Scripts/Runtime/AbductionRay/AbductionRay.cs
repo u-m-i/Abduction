@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using System.Collections;
 using System.Runtime.CompilerServices;
+using System.Collections.Specialized;
 
 namespace Abduction
 {
@@ -54,23 +55,21 @@ namespace Abduction
 
             draggee = other.transform;
 
-            // Math.Abs(dragge.x) - 
-
-            //draggee.LookAt(transform,new Vector3(0,1,0));
-
             StartCoroutine(Abduct());
-
         } 
 
         private IEnumerator Abduct()
         {
 
-            holderVec = new Vector3(0.035f, 0.15f, -0.035f);
+            // |v1.x| - v2.x , |v1.y| - v2.y, |v1.z| - v2.z
 
-            // Create the compensatory value for the x value
+
+            holderVec = new Vector3(0.035f, 0.15f, 0.035f);
+
+            // Create the compensatory value for the x and z value
             AxisDirection();
 
-            while(draggee.position.y <= criticPoint .y)
+            while (draggee.position.y <= criticPoint.y)
             {
 
                 CalculateCritialLimit();
@@ -93,15 +92,18 @@ namespace Abduction
         private void AxisDirection()
         {
 
+
             if(draggee.position.x > criticPoint.x)
             {
                 holderVec.x *= -1;
-                return;
             }
 
             // Factor to increase
-            holderVec.x *= 1;
 
+            if(draggee.position.z > criticPoint.z)
+            {
+                holderVec.z *= -1;
+            }
         }
 
 
