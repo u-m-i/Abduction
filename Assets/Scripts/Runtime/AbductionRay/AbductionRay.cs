@@ -1,16 +1,16 @@
-using System;
 using UnityEngine;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using System.Collections.Specialized;
+using UnityEngine.UIElements;
 
 namespace Abduction
 {
     public class AbductionRay : MonoBehaviour
     {
 
+        [Header("Character Settings")]
+
         [SerializeField,Space(4)]
-        private GameObject inputReceptor;
+        private FirstPersonMovement inputReceptor;
 
         [SerializeField,Space(4)]
         private int minusOne = -256;
@@ -24,7 +24,7 @@ namespace Abduction
 
         private Vector3 holderVec;
 
-        private Renderer r;
+        private Renderer renderer;
 
 
 
@@ -32,11 +32,15 @@ namespace Abduction
         private void Awake()
         {
 
-
-            r = GetComponent<Renderer>();
+            renderer = GetComponent<Renderer>();
 
             // Making the final point of the abduction ray.
-            criticPoint = new Vector3(r.bounds.center.x, (transform.position.y + 5f), r.bounds.center.z);
+            criticPoint = new Vector3
+            {
+                x = renderer.bounds.center.x,
+                y = (transform.position.y + 5f),
+                z = renderer.bounds.center.z
+            };
 
         }
 
@@ -54,6 +58,8 @@ namespace Abduction
             holderBody.useGravity = false;
 
             draggee = other.transform;
+
+            inputReceptor.enabled = false;
 
             StartCoroutine(Abduct());
         } 
@@ -83,6 +89,8 @@ namespace Abduction
 
             draggee = null;
 
+            inputReceptor.enabled = true;
+
             yield break;
 
         }
@@ -92,7 +100,7 @@ namespace Abduction
         private void AxisDirection()
         {
 
-
+            Debug.Assert(draggee.position.x > criticPoint.x , "The draggee <i>x</i> position is not being considered major than the Beam ray");
             if(draggee.position.x > criticPoint.x)
             {
                 holderVec.x *= -1;
@@ -104,6 +112,8 @@ namespace Abduction
             {
                 holderVec.z *= -1;
             }
+
+            Debug.Log(holderVec);
         }
 
 
@@ -112,10 +122,10 @@ namespace Abduction
         private void CalculateCritialLimit()
         {
 
-            if((int) draggee.position.x == (int)criticPoint.x)
+            if(draggee.position.x >= criticPoint.x)
                 holderVec.x = 0;
 
-            if((int) draggee.position.z == (int)criticPoint.z)
+            if(draggee.position.z >= criticPoint.z)
                 holderVec.z = 0;
 
         }
