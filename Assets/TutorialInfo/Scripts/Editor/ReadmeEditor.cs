@@ -147,11 +147,6 @@ public class ReadmeEditor : Editor
 
             GUILayout.Space(k_Space);
         }
-
-        if (GUILayout.Button("Remove Readme Assets", ButtonStyle))
-        {
-            RemoveTutorial();
-        }
     }
 
     bool m_Initialized;

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UIElements;
+using System;
 
 namespace Abduction
 {
@@ -13,8 +14,10 @@ namespace Abduction
         [SerializeField,Space(4)]
         private FirstPersonMovement inputReceptor;
 
-        [SerializeField,Space(4)]
-        private int minusOne = -256;
+
+        [SerializeField, Space(4)]
+        private Transform debuger;
+
 
         #endregion
 
@@ -30,6 +33,9 @@ namespace Abduction
 
         private Renderer renderer;
 
+        private Action CalculateX;
+
+        private Action CalculateZ;
 
 
         private void Awake()
@@ -46,26 +52,33 @@ namespace Abduction
                 z = renderer.bounds.center.z
             };
 
+            debuger.position = criticPoint;
         }
 
 
         private void OnTriggerEnter(Collider other)
         {
-
             if(draggee)
                 return;
 
             inputReceptor.enabled = false;
 
-            GetComponent<Collider>().enabled = false;
-
             holderBody = other.gameObject.GetComponent<Rigidbody>();
 
             holderBody.useGravity = false;
 
+            holderBody.velocity = Vector3.zero;
+
+            holderBody.angularVelocity = Vector3.zero;
+
+            holderBody.constraints =
+                RigidbodyConstraints.FreezeAll & RigidbodyConstraints.FreezeRotationX & RigidbodyConstraints.FreezeRotationZ;
+
+            GetComponent<Collider>().enabled = false;
+
             draggee = other.transform;
 
-            buffer = draggee.position;
+            buffer = other.transform.position;
 
             StartCoroutine(Abduct());
         }
@@ -80,7 +93,8 @@ namespace Abduction
             
             AxisDirection();
 
-            while (draggee.position.y <= criticPoint.y)
+            
+            while (buffer.y <= criticPoint.y)
             {
 
                 CalculateCritialLimit();
@@ -115,17 +129,28 @@ namespace Abduction
         }
 
 
+
         /// <summary>
         /// Calculate y  given the x and advance x in time
         /// </summary>
         private void CalculateCritialLimit()
         {
 
-            if(!(draggee.position.x >= criticPoint.x && pad.x > 0) || !(draggee.position.x <= criticPoint.x && pad.x < 0))
-               buffer.x += pad.x;
+            if((buffer.x >= criticPoint.x && pad.x > 0) || (buffer.x <= criticPoint.x && pad.x < 0))
+            {
+            }
+            else
+            {
+                buffer.x += pad.x;
+            }
 
-            if (!(draggee.position.z >= criticPoint.z && pad.z > 0) || !(draggee.position.z <= criticPoint.z && pad.z < 0))
+            if ((buffer.z >= criticPoint.z && pad.z > 0) || (buffer.z <= criticPoint.z && pad.z < 0))
+            {
+            }
+            else
+            {
                 buffer.z += pad.z;
+            }
 
             buffer.y += pad.y;
         }
