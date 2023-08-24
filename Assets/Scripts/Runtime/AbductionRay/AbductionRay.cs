@@ -6,6 +6,7 @@ namespace Abduction
 {
     public class AbductionRay : MonoBehaviour
     {
+        #region Inspector
 
         [Header("Character Settings")]
 
@@ -15,17 +16,19 @@ namespace Abduction
         [SerializeField,Space(4)]
         private int minusOne = -256;
 
+        #endregion
+
         private Transform draggee;
 
         private Rigidbody holderBody;
 
-
         private Vector3 criticPoint;
 
-        private Vector3 holderVec;
+        private Vector3 pad;
+
+        private Vector3 buffer;
 
         private Renderer renderer;
-
 
 
 
@@ -35,6 +38,7 @@ namespace Abduction
             renderer = GetComponent<Renderer>();
 
             // Making the final point of the abduction ray.
+
             criticPoint = new Vector3
             {
                 x = renderer.bounds.center.x,
@@ -51,6 +55,8 @@ namespace Abduction
             if(draggee)
                 return;
 
+            inputReceptor.enabled = false;
+
             GetComponent<Collider>().enabled = false;
 
             holderBody = other.gameObject.GetComponent<Rigidbody>();
@@ -59,20 +65,19 @@ namespace Abduction
 
             draggee = other.transform;
 
-            inputReceptor.enabled = false;
+            buffer = draggee.position;
 
             StartCoroutine(Abduct());
-        } 
+        }
+    
 
         private IEnumerator Abduct()
         {
 
-            // |v1.x| - v2.x , |v1.y| - v2.y, |v1.z| - v2.z
-
-
-            holderVec = new Vector3(0.035f, 0.15f, 0.035f);
+            pad = new Vector3(0.035f, 0.15f, 0.035f);
 
             // Create the compensatory value for the x and z value
+            
             AxisDirection();
 
             while (draggee.position.y <= criticPoint.y)
@@ -80,7 +85,7 @@ namespace Abduction
 
                 CalculateCritialLimit();
 
-                draggee.position += holderVec;
+                draggee.position = buffer;
 
                 yield return new WaitForFixedUpdate();
             }
@@ -96,38 +101,33 @@ namespace Abduction
         }
 
 
-        /// Factor to reduce
         private void AxisDirection()
         {
-
-            Debug.Assert(draggee.position.x > criticPoint.x , "The draggee <i>x</i> position is not being considered major than the Beam ray");
             if(draggee.position.x > criticPoint.x)
             {
-                holderVec.x *= -1;
+                pad.x *= -1;
             }
-
-            // Factor to increase
 
             if(draggee.position.z > criticPoint.z)
             {
-                holderVec.z *= -1;
+                pad.z *= -1;
             }
-
-            Debug.Log(holderVec);
         }
 
 
+        /// <summary>
         /// Calculate y  given the x and advance x in time
-        // The final output is a Vector3
+        /// </summary>
         private void CalculateCritialLimit()
         {
 
-            if(draggee.position.x >= criticPoint.x)
-                holderVec.x = 0;
+            if(!(draggee.position.x >= criticPoint.x && pad.x > 0) || !(draggee.position.x <= criticPoint.x && pad.x < 0))
+               buffer.x += pad.x;
 
-            if(draggee.position.z >= criticPoint.z)
-                holderVec.z = 0;
+            if (!(draggee.position.z >= criticPoint.z && pad.z > 0) || !(draggee.position.z <= criticPoint.z && pad.z < 0))
+                buffer.z += pad.z;
 
+            buffer.y += pad.y;
         }
     }
 }
