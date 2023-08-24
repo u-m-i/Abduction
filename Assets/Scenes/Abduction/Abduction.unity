@@ -40236,7 +40236,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1119720315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -40272,7 +40272,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.5411765, g: 1, b: 0.7531864, a: 1}
-  m_Intensity: 0.41
+  m_Intensity: 0.23
   m_Range: 5.45
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -40306,7 +40306,7 @@ Light:
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
-  m_RenderMode: 2
+  m_RenderMode: 1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 256
