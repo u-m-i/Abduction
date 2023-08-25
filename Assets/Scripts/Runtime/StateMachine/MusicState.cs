@@ -7,7 +7,7 @@ namespace Abduction.StateBehaviour
     /// <summary>
     /// Dictates the state for the music
     /// </summary>
-    public class MusicState : State
+    public class Forest : State
     {
         [SerializeField]
         private Fader fader;
