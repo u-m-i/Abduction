@@ -4803,7 +4803,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144531526}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.68, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6607,7 +6607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &187296716
 Transform:
   m_ObjectHideFlags: 0
@@ -16845,7 +16845,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348527799}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31.13538, y: -17.453907, z: -22.280586}
+  m_LocalPosition: {x: 33.037956, y: -19.758352, z: -20.92453}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -59124,12 +59124,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stages:
-  - clip: {fileID: 8300000, guid: c5faceb05b0aa5148a3996af25ed32d1, type: 3}
-    transition:
-      serializedVersion: 2
+  - {clip: {fileID: 8300000, guid: c5faceb05b0aa5148a3996af25ed32d1, type: 3}, transition:
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -59137,8 +59134,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -59149,12 +59145,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - clip: {fileID: 8300000, guid: 0f76dfafe6ccd6947a5ed211ed29f40c, type: 3}
-    transition:
-      serializedVersion: 2
+}
+  - {clip: {fileID: 8300000, guid: 0f76dfafe6ccd6947a5ed211ed29f40c, type: 3}, transition:
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -59162,8 +59156,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -59174,12 +59167,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - clip: {fileID: 8300000, guid: ddeeff2a24811924b96d0f93c0da4c58, type: 3}
-    transition:
-      serializedVersion: 2
+}
+  - {clip: {fileID: 8300000, guid: ddeeff2a24811924b96d0f93c0da4c58, type: 3}, transition:
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -59187,8 +59178,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -59199,12 +59189,10 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  - clip: {fileID: 8300000, guid: 671674c736bf0c74495c612200ba8826, type: 3}
-    transition:
-      serializedVersion: 2
+}
+  - {clip: {fileID: 8300000, guid: 671674c736bf0c74495c612200ba8826, type: 3}, transition:
       m_Curve:
-      - serializedVersion: 3
-        time: 0
+      - time: 0
         value: 0
         inSlope: 0
         outSlope: 0
@@ -59212,8 +59200,7 @@ MonoBehaviour:
         weightedMode: 0
         inWeight: 0
         outWeight: 0
-      - serializedVersion: 3
-        time: 1
+      - time: 1
         value: 1
         inSlope: 2
         outSlope: 2
@@ -59224,14 +59211,13 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  currentStage:
-    clip: {fileID: 0}
-    transition:
-      serializedVersion: 2
+}
+  currentStage: {clip: {fileID: 0}, transition:
       m_Curve: []
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
+}
 --- !u!4 &1712739896
 Transform:
   m_ObjectHideFlags: 0
@@ -59936,7 +59922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29763bfeba1c80d4ea3c8745c46a9b23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 1600006925}
+  stages: []
 --- !u!4 &1734884801
 Transform:
   m_ObjectHideFlags: 0
