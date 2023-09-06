@@ -1,33 +1,38 @@
+using System;
 using UnityEngine;
-using Abduction.Audio;
+using Abduction.StateBehaviour;
 
-namespace Abduction.StateBehaviour
+namespace Abduction.Audio
 {
 
     /// <summary>
     /// Dictates the state for the music
     /// </summary>
-    public class Forest : State
+    [Serializable]
+    public class Musical : State
     {
-        [SerializeField]
-        private Fader fader;
+
+        public AudioClip Clip;
+
+        public AnimationCurve In;
+
+        public AnimationCurve Out;
+
 
 
         public override void OnRun()
         {
-            // Check alterations
         }
 
 
         public override void OnSwap() 
         {
-            Transition();
+
         }
 
 
         private void Transition()
         {
-            // Use the fader to transition between stages
         }
     }
 }
