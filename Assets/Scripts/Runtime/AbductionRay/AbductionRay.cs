@@ -1,7 +1,5 @@
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UIElements;
-using System;
 
 namespace Abduction
 {
@@ -31,25 +29,22 @@ namespace Abduction
 
         private Vector3 buffer;
 
-        private Renderer renderer;
+        private Renderer meshRenderer;
 
-        private Action CalculateX;
-
-        private Action CalculateZ;
 
 
         private void Awake()
         {
 
-            renderer = GetComponent<Renderer>();
+            meshRenderer = GetComponent<Renderer>();
 
             // Making the final point of the abduction ray.
 
             criticPoint = new Vector3
             {
-                x = renderer.bounds.center.x,
+                x = meshRenderer.bounds.center.x,
                 y = (transform.position.y + 5f),
-                z = renderer.bounds.center.z
+                z = meshRenderer.bounds.center.z
             };
 
             debuger.position = criticPoint;
