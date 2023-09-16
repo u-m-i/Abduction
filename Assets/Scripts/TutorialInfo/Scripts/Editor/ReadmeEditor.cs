@@ -6,8 +6,8 @@ using System;
 using System.IO;
 using System.Reflection;
 
-[CustomEditor(typeof(Readme))]
 [InitializeOnLoad]
+[CustomEditor(typeof(Readme))]
 public class ReadmeEditor : Editor
 {
     static string s_ShowedReadmeSessionStateName = "ReadmeEditor.showedReadme";
@@ -20,6 +20,7 @@ public class ReadmeEditor : Editor
     {
         EditorApplication.delayCall += SelectReadmeAutomatically;
     }
+
 
     static void RemoveTutorial()
     {
@@ -51,6 +52,7 @@ public class ReadmeEditor : Editor
         }
     }
 
+
     static void SelectReadmeAutomatically()
     {
         if (!SessionState.GetBool(s_ShowedReadmeSessionStateName, false))
@@ -66,13 +68,17 @@ public class ReadmeEditor : Editor
         }
     }
 
+
     static void LoadLayout()
     {
-        var assembly = typeof(EditorApplication).Assembly;
-        var windowLayoutType = assembly.GetType("UnityEditor.WindowLayout", true);
-        var method = windowLayoutType.GetMethod("LoadWindowLayout");
+
+        Assembly assembly = typeof(EditorApplication).Assembly;
+        Type windowLayoutType = assembly.GetType("UnityEditor.WindowLayout", true);
+        MethodInfo method = windowLayoutType.GetMethod("LoadWindowLayout", BindingFlags.Static);
+
         method.Invoke(null, new object[] { Path.Combine(Application.dataPath, "TutorialInfo/Layout.wlt"), false });
     }
+
 
     static Readme SelectReadme()
     {
@@ -91,6 +97,7 @@ public class ReadmeEditor : Editor
             return null;
         }
     }
+
 
     protected override void OnHeaderGUI()
     {
