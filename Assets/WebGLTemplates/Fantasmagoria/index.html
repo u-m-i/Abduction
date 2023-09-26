@@ -7,7 +7,19 @@
 	<title>{{{ PRODUCT_NAME }}}</title>
 	<!-- <link rel="shortcut icon" href="static/favicon.ico"> -->
 	<link rel="stylesheet" href="static/style.css">
-	<script src="./vendor/jquery.min.js"></script>
+
+
+	<meta keywords="{{{LOADER_FILENAME}}}">
+	<meta author="{{{COMPANY_NAME}}}">
+
+	<meta id="data_filename">"{{{DATA_FILENAME}}}"</meta>
+	<meta id="framework_filename">"{{{FRAMEWORK_FILENAME}}}"</meta>
+	<meta id="code_filename">"{{{CODE_FILENAME}}}"</meta>
+	<meta id="memory_filename">"{{{MEMORY_FILENAME}}}"</meta>
+	<meta id="symbols_filename">"{{{SYMBOLS_FILENAME}}}"</meta>
+	<meta id="symbols_filename">"{{{COMPANY_FILENAME}}}"</meta>
+
+
 </head>
 
 <body>
@@ -20,15 +32,18 @@
 	</div>
 
 	<canvas id="unity-canvas" width=100 height=100 style="overflow: hidden; width: 100%; height: 100vh; background: #231F20 "></canvas>
+	
+	
+
 
 	<script>
 
-		var unityInstance;
+		let unityInstance;
 
-		var buildUrl = "Build";
-		var loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
+		let buildUrl = "Build";
+		let loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
 
-		var config = {
+		let config = {
 			dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
 			frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
 			codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
@@ -44,13 +59,15 @@
 			productVersion: "{{{ PRODUCT_VERSION }}}",
 		};
 
-		var canvas = document.querySelector("#unity-canvas");
+		let canvas = document.querySelector("#unity-canvas");
 
 #if BACKGROUND_FILENAME
+
 		canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
+
 #endif
 
-		var script = document.createElement("script");
+		let script = document.createElement("script");
 		script.src = loaderUrl;
 
 		script.onload = () =>
@@ -58,8 +75,9 @@
 			createUnityInstance(canvas, config, (progress) =>
 			{
 				if(progress == 1)
-					jQuery(".container").fadeOut("slow");
+				{
 
+				}
 
 			}).then((unityInstance2) =>
 			{
@@ -68,7 +86,7 @@
 
 			}).catch((message) =>
 			{
-				alert(message);
+				error_prompt.text = "This browser or device do not support the experience"
 			});
 		};
 
