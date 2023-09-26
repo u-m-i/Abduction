@@ -1,3 +1,7 @@
+/**
+ * 
+ * @param {*} pertecentage 
+ */
 function onProgress( pertecentage )
 {
     if(pertecentage == 1)
@@ -6,7 +10,9 @@ function onProgress( pertecentage )
     }
 }
 
-
+/**
+ * 
+ */
 function instantiateBuild()
 {
     // Create the instance of config with all the data 
@@ -18,9 +24,12 @@ function instantiateBuild()
     createUnityInstance(canvas, config, onProgess);
 }
 
+/**
+ * 
+ * @returns The compatibility of the device 
+ */
 function checkCompatibility()
 {
-
     if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
     {
         let announce = document.querySelector("#mobile-announce");
@@ -54,7 +63,8 @@ let asm = root + "";
 let loader = document.createElement("script");
 loader.src = asm;
 
-loader.onload(instantiateBuild).then((instance) => {
+loader.onload(instantiateBuild).then((instance) => 
+{
 
     buildInstance = instance;
 
