@@ -1,75 +1,103 @@
+class Device
+{
+    /**
+     *  Empty method, that lately is fill with the aproppiate response for
+     *  the device capabilities support. 
+     */
+    Answer()
+    { }
+}
+
+class Configuration
+{
+    /**Properties */
+
+    dataUrl;
+    frameworkUrl
+    codeUrl;
+    memoryUrl;
+    symbolsUrl;
+    streamingAssetsUrl;
+    companyName;
+    productName;
+    productVersion;
+
+}
+
+
 /**
+ *Is called on the progress of the build load 
  * 
- * @param {*} pertecentage 
+ * @param {Number} pertecentage of load progress 
  */
 function onProgress( pertecentage )
 {
     if(pertecentage == 1)
     {
 
+        let container = document.getElementById("container");
+
+        container.style.animation = "fadeOut .45s forwards";
+
     }
 }
+
+
+function createConfiguration()
+{
+
+    let config = new Configuration();
+
+    config.codeUrl = source + document.querySelector("file_name");
+
+    config.dataUrl = 
+
+}
+
 
 /**
  * 
  */
 function instantiateBuild()
 {
-    // Create the instance of config with all the data 
+    // Create the instance of with all the data 
     let config = createConfiguration();
 
     // Get the canvas object for the build 
     let canvas = document.querySelector("#build-canvas");
 
-    createUnityInstance(canvas, config, onProgess);
+    return createUnityInstance(canvas, config, onProgess);
 }
 
+
 /**
- * 
- * @returns The compatibility of the device 
+ * Prints the announce of not supported device 
  */
-function checkCompatibility()
+function notSupported()
 {
-    if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
-    {
         let announce = document.querySelector("#mobile-announce");
 
         announce.textContent = "This experience do not support mobile devices";
-
-        return false;
-    }
-
-    return true;
 }
 
 
-let config 
+
+/**
+ * 
+ * @returns The device adapted to the platform 
+ */
+function checkCompatibility()
 {
-    dataUrl,
-    frameworkUrl,
-    codeUrl,
-    memoryUrl,
-    symbolsUrl,
-    streamingAssetsUrl,
-    companyName,
-    productName,
-    productVersion
-};
+    let device = new Device();
 
-const root = "Build";
+    if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
+    {
+        device.Answer = notSupported; 
+    }
+    else
+    {
+        device.Answer = instantiateBuild;
+    }
 
-let asm = root + "";
-
-let loader = document.createElement("script");
-loader.src = asm;
-
-loader.onload(instantiateBuild).then((instance) => 
-{
-
-    buildInstance = instance;
-
-}).catch((err) => 
-{
-    console.log(err);
-    console.log("this device does not support this experience");
-});
+    return device;
+}

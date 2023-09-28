@@ -8,7 +8,6 @@
 	<!-- <link rel="shortcut icon" href="static/favicon.ico"> -->
 	<link rel="stylesheet" href="static/style.css">
 
-
 	<meta keywords="{{{LOADER_FILENAME}}}">
 	<meta author="{{{COMPANY_NAME}}}">
 
@@ -18,8 +17,7 @@
 	<meta id="memory_filename">"{{{MEMORY_FILENAME}}}"</meta>
 	<meta id="symbols_filename">"{{{SYMBOLS_FILENAME}}}"</meta>
 	<meta id="symbols_filename">"{{{COMPANY_FILENAME}}}"</meta>
-
-
+	<script src="./static/loader.js"></script>
 </head>
 
 <body>
@@ -31,11 +29,11 @@
 		</div>
 	</div>
 
+	<p id="mobile-anounce"></p>
+
 	<canvas id="unity-canvas"></canvas>
 
 	<script>
-
-		let unityInstance;
 
 		let buildUrl = "Build";
 		let loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
@@ -56,13 +54,7 @@
 			productVersion: "{{{ PRODUCT_VERSION }}}",
 		};
 
-		let canvas = document.querySelector("#unity-canvas");
 
-#if BACKGROUND_FILENAME
-
-		canvas.style.background = "url('" + buildUrl + "/{{{ BACKGROUND_FILENAME.replace(/'/g, '%27') }}}') center / cover";
-
-#endif
 
 		let script = document.createElement("script");
 		script.src = loaderUrl;
