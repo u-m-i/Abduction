@@ -4,84 +4,39 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 	<title>{{{ PRODUCT_NAME }}}</title>
-	<!-- <link rel="shortcut icon" href="static/favicon.ico"> -->
+
+	<link rel="shortcut icon" href="static/favicon.ico">
 	<link rel="stylesheet" href="static/style.css">
 
-	<meta keywords="{{{LOADER_FILENAME}}}">
-	<meta author="{{{COMPANY_NAME}}}">
+	<meta id="company_name" author="{{{COMPANY_NAME}}}">
 
-	<meta id="data_filename">"{{{DATA_FILENAME}}}"</meta>
-	<meta id="framework_filename">"{{{FRAMEWORK_FILENAME}}}"</meta>
-	<meta id="code_filename">"{{{CODE_FILENAME}}}"</meta>
-	<meta id="memory_filename">"{{{MEMORY_FILENAME}}}"</meta>
-	<meta id="symbols_filename">"{{{SYMBOLS_FILENAME}}}"</meta>
-	<meta id="symbols_filename">"{{{COMPANY_FILENAME}}}"</meta>
-	<script src="./static/loader.js"></script>
+	<meta id="wasm" keywords="{{{LOADER_FILENAME}}}">
+
+	<meta id="data_filename" keywords="{{{DATA_FILENAME}}}">
+	<meta id="framework_filename" keywords="{{{FRAMEWORK_FILENAME}}}">
+	<meta id="code_filename" keywords="{{{CODE_FILENAME}}}">
+	<meta id="memory_filename" keywords="{{{MEMORY_FILENAME}}}">
+	<meta id="symbols_filename" keywords="{{{SYMBOLS_FILENAME}}}">
+	<meta id="product_version" keywords="{{{PRODUCT_VERSION}}}">
 </head>
 
 <body>
 
-	<div class="container">
+	<canvas id="unity-canvas"></canvas>
+
+	<div id="unity-container">
 		<img class="center" src="static/Logo.png" alt="logo" width="200">
 		<div class="earth">
 			<div class="moon"></div>
 		</div>
 	</div>
 
-	<p id="mobile-anounce"></p>
+	<p id="mobile-announce"></p>
 
-	<canvas id="unity-canvas"></canvas>
+	<script type="module" src="./static/entry.js"></script>
 
-	<script>
-
-		let buildUrl = "Build";
-		let loaderUrl = buildUrl + "/{{{ LOADER_FILENAME }}}";
-
-		let config = {
-			dataUrl: buildUrl + "/{{{ DATA_FILENAME }}}",
-			frameworkUrl: buildUrl + "/{{{ FRAMEWORK_FILENAME }}}",
-			codeUrl: buildUrl + "/{{{ CODE_FILENAME }}}",
-			#if MEMORY_FILENAME
-        memoryUrl: buildUrl + "/{{{ MEMORY_FILENAME }}}",
-			#endif
-#if SYMBOLS_FILENAME
-        symbolsUrl: buildUrl + "/{{{ SYMBOLS_FILENAME }}}",
-			#endif
-        streamingAssetsUrl: "StreamingAssets",
-			companyName: "{{{ COMPANY_NAME }}}",
-			productName: "{{{ PRODUCT_NAME }}}",
-			productVersion: "{{{ PRODUCT_VERSION }}}",
-		};
-
-
-
-		let script = document.createElement("script");
-		script.src = loaderUrl;
-
-		script.onload = () =>
-		{
-			createUnityInstance(canvas, config, (progress) =>
-			{
-				if(progress == 1)
-				{
-
-				}
-
-			}).then((unityInstance2) =>
-			{
-
-				unityInstance = unityInstance2;
-
-			}).catch((message) =>
-			{
-				error_prompt.text = "This browser or device do not support the experience"
-			});
-		};
-
-		document.body.appendChild(script);
-
-	</script>
 </body>
 
 </html>

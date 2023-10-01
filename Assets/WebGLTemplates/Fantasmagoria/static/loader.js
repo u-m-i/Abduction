@@ -1,5 +1,6 @@
-class Device
+class IDevice
 {
+
     /**
      *  Empty method, that lately is fill with the aproppiate response for
      *  the device capabilities support. 
@@ -8,25 +9,48 @@ class Device
     { }
 }
 
+
 class Configuration
 {
     /**Properties */
-
     dataUrl;
     frameworkUrl
     codeUrl;
-    memoryUrl;
     symbolsUrl;
-    streamingAssetsUrl;
     companyName;
     productName;
     productVersion;
 
+    // Default and unique value
+    streamingAssetsUrl = "StreamingAssets";
+
+    constructor(root)
+    {
+
+        let padded = root + "/";
+
+        this.dataUrl = padded + this.getValue("data_filename");
+
+        this.frameworkUrl = padded + this.getValue("framework_filename");
+
+        this.codeUrl = padded + this.getValue("code_filename");
+
+        this.companyName = padded + document.getElementById("company_name").getAttribute("author"); 
+
+        this.productVersion = padded + this.getValue("product_version");
+
+    }
+
+
+    getValue(id)
+    {
+        return document.getElementById(id).getAttribute("keywords");
+    }
 }
 
 
 /**
- *Is called on the progress of the build load 
+ *  Is called on the progress of the build load 
  * 
  * @param {Number} pertecentage of load progress 
  */
@@ -34,8 +58,7 @@ function onProgress( pertecentage )
 {
     if(pertecentage == 1)
     {
-
-        let container = document.getElementById("container");
+        let container = document.getElementById("unity-container");
 
         container.style.animation = "fadeOut .45s forwards";
 
@@ -43,20 +66,22 @@ function onProgress( pertecentage )
 }
 
 
+/**
+ * 
+ * @returns Configuration dispatched
+ */
 function createConfiguration()
 {
 
-    let config = new Configuration();
+    const sourceRoot = "Build";
 
-    config.codeUrl = source + document.querySelector("file_name");
-
-    config.dataUrl = 
+    return new Configuration(sourceRoot);
 
 }
 
 
 /**
- * 
+ *  Instantiates the build on the selected canvas 
  */
 function instantiateBuild()
 {
@@ -64,22 +89,28 @@ function instantiateBuild()
     let config = createConfiguration();
 
     // Get the canvas object for the build 
-    let canvas = document.querySelector("#build-canvas");
+    let canvas = document.querySelector("#unity-canvas");
 
-    return createUnityInstance(canvas, config, onProgess);
+    createUnityInstance(canvas, config, onProgress).then((instance) => 
+    {
+
+        instance.SetFullScreen(1);
+
+    });
 }
 
 
 /**
- * Prints the announce of not supported device 
+ *  Prints the announce of not supported device 
  */
 function notSupported()
 {
-        let announce = document.querySelector("#mobile-announce");
+    let announce = document.getElementById("mobile-announce");
 
-        announce.textContent = "This experience do not support mobile devices";
+    announce.textContent = "This experience do not support mobile devices";
+
+    announce.style.display = "block";
 }
-
 
 
 /**
@@ -88,7 +119,7 @@ function notSupported()
  */
 function checkCompatibility()
 {
-    let device = new Device();
+    let device = new IDevice();
 
     if(/iPhone|iPad|iPod|Android/i.test(navigator.userAgent))
     {
@@ -101,3 +132,5 @@ function checkCompatibility()
 
     return device;
 }
+
+export {checkCompatibility, notSupported, instantiateBuild, createConfiguration, onProgress, IDevice, Configuration};

@@ -1,16 +1,19 @@
-import "loader.js"
+import {checkCompatibility}  from "./loader.js" 
 
-const source = "Build";
+let wasm = document.getElementById("wasm").getAttribute("keywords");
 
 let script = document.createElement("script");
-script.src = loaderUrl;
+
+script.src = `Build/${wasm}`;
+
+function buildDone(instance)
+{
+    instance.SetFullScreen(1);
+}
 
 script.onload = () => 
 {
-    let device = checkCompatibility();
-
-    device.Answer();
+    checkCompatibility().Answer();
 }
 
-
-
+document.body.appendChild(script);
