@@ -16,7 +16,6 @@ namespace Abduction
         [SerializeField, Space(4)]
         private Transform debuger;
 
-
         #endregion
 
         private Transform draggee;
@@ -46,6 +45,8 @@ namespace Abduction
                 y = (transform.position.y + 5f),
                 z = meshRenderer.bounds.center.z
             };
+
+						Animator.StringToHash("something");
 
             debuger.position = criticPoint;
         }
