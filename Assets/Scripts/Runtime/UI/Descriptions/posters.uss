@@ -1,0 +1,7 @@
+.linear {
+}
+
+.line {
+    margin-top: 10px;
+    font-size: 29px;
+}
