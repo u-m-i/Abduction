@@ -13,19 +13,8 @@ namespace Abduction.UI
 
         public string Metadata;
 
-        string Description;
+        public string Description;
 
-        string Cast;
-        
-        string Script;
-
-        string Production;
-
-        string Photography;
-
-        string Edition;
-
-        string Producer;
-
+        public List<string> ProjectionSites;
     }
 }
