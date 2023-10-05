@@ -4,7 +4,7 @@ namespace Abduction
 {
 
     [Serializable]
-    public record Movie
+    public record MovieRecord
     {
         private string title;
 

@@ -1,22 +1,31 @@
-using UnityEngine;
-using UnityEngine.UIElements;
-
-namespace Nuruk.UI
+namespace Abduction.UI
 {
-    public class MovieDescription : MonoBehaviour
+
+    public struct Movie 
     {
+        public string Title;
+        
+        public string Director;
 
-        [SerializeField]
-        private UIDocument uxml;
+        public string Genres;
 
+        public string Date;
 
-        private void OnEnable()
-        {
-            VisualElement root = uxml.rootVisualElement;
+        public string Metadata;
 
-            Button button = root.Q<Button>("exit-button");
+        string Description;
 
-            button.clicked += () => {uxml.gameObject.SetActive(false);};
-        }
+        string Cast;
+        
+        string Script;
+
+        string Production;
+
+        string Photography;
+
+        string Edition;
+
+        string Producer;
+
     }
 }
