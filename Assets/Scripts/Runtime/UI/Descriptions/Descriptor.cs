@@ -25,15 +25,41 @@ namespace Abduction.UI
         /// </summary>
         private void SetDescription(Movie movie)
         {
-            PropertyInfo[] properties = typeof(Movie).GetProperties();
+            FieldInfo[] fields = typeof(Movie).GetFields();
 
-            foreach (PropertyInfo property in properties)
+            Label label;
+
+            int currentLabel = 0;
+
+            foreach (FieldInfo field in fields)
             {
-                Label field = document.rootVisualElement.Q<Label>($"#{property.Name}", ".line");
+                if (field.Name == "ProjectionSites")
+                {
+                    List<string> projections = (List<string>) field.GetValue(movie);
 
-                field.text = (string)property.GetValue(movie);
+                    label = document.rootVisualElement.Q<Label>("Projections");
+
+                    foreach (string projection in projections)
+                    {
+                        label.text = projection;
+
+                        label.text += '\n';
+                    }
+
+                    break;
+                }
+
+
+                label = document.rootVisualElement.Query<Label>().AtIndex(currentLabel);
+
+                Debug.Log(label.name);
+                
+                label.text = (string)field.GetValue(movie);
+
+                currentLabel++;
             }
         }
+
 
         /// <summary>
         /// 
@@ -43,6 +69,7 @@ namespace Abduction.UI
         {
 
             int currentField = 0;
+
             Movie movie = new Movie();
 
             string[] source = sources[index].Split(new[] { STOP_SYMBOL }, StringSplitOptions.RemoveEmptyEntries); 
@@ -75,9 +102,27 @@ namespace Abduction.UI
             return movie;
         }
 
-        [ContextMenu("Test (void)")]
+
+        [ContextMenu("Test (Creation of content)")]
         private void Test()
         {
+            int indexTest = 0;
+
+            Movie m = CreateMovieFromText(indexTest);
+
+            SetDescription(m);
+        }
+
+
+
+        [ContextMenu("Test (Access of the UXML)")]
+        private void AccessALabel()
+        {
+            Label label = document.rootVisualElement.Q<Label>(name: "Title", className: "line");
+
+            Debug.Log($"The Title content is {label.text}");
         }
     }
 }
+
+
