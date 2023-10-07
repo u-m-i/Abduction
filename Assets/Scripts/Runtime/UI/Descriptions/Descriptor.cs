@@ -10,7 +10,7 @@ namespace Abduction.UI
     {
         [SerializeField]
         private UIDocument document;
-
+        
         [Space(4)]
 
         [SerializeField]
@@ -110,7 +110,6 @@ namespace Abduction.UI
 
             SetDescription(m);
         }
-
 
 
         [ContextMenu("Test (Access of the UXML)")]

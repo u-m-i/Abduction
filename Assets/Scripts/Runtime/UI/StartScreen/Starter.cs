@@ -10,10 +10,16 @@ namespace Abduction
         [SerializeField]
         private UIDocument document;
 
-        
+        [Space(4)] 
+
         [SerializeField]
         [Tooltip("Must be a game object, not a uninstantiated prefab.")]
         private GameObject player;
+
+        [Space(4)]
+
+        [SerializeField]
+        private AudioListener bait;
 
         #endregion
 
@@ -29,6 +35,8 @@ namespace Abduction
 
         private void Begin()
         {
+
+            bait.gameObject.SetActive(false); 
             player.SetActive(true);
             document.gameObject.SetActive(false);
         }
