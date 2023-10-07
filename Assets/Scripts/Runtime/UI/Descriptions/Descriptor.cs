@@ -27,34 +27,32 @@ namespace Abduction.UI
         {
             FieldInfo[] fields = typeof(Movie).GetFields();
 
-            Label label;
-
             int currentLabel = 0;
 
             foreach (FieldInfo field in fields)
             {
+
                 if (field.Name == "ProjectionSites")
                 {
                     List<string> projections = (List<string>) field.GetValue(movie);
 
-                    label = document.rootVisualElement.Q<Label>("Projections");
+                    Label site = document.rootVisualElement.Q<Label>("Projections");
 
                     foreach (string projection in projections)
                     {
-                        label.text = projection;
+                        site.text += projection;
 
-                        label.text += '\n';
+                        site.text += '\n';
                     }
 
                     break;
                 }
 
+                Label label = document.rootVisualElement.Query<Label>().AtIndex(currentLabel);
 
-                label = document.rootVisualElement.Query<Label>().AtIndex(currentLabel);
-
-                Debug.Log(label.name);
+                label.text = "";
                 
-                label.text = (string)field.GetValue(movie);
+                label.text += (string) field.GetValue(movie);
 
                 currentLabel++;
             }
@@ -62,7 +60,7 @@ namespace Abduction.UI
 
 
         /// <summary>
-        /// 
+        /// CHECKED
         /// </summary>
         /// <param name="index"></param>
         private Movie CreateMovieFromText(int index)
@@ -121,6 +119,15 @@ namespace Abduction.UI
             Label label = document.rootVisualElement.Q<Label>(name: "Title", className: "line");
 
             Debug.Log($"The Title content is {label.text}");
+        }
+
+
+        [ContextMenu("Test (Reset the UXML)")]
+        private void Reset()
+        {
+            gameObject.SetActive(false);
+
+            gameObject.SetActive(true);
         }
     }
 }

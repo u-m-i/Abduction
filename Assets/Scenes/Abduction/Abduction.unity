@@ -5200,11 +5200,11 @@ MonoBehaviour:
   document: {fileID: 132221908}
   sources:
   - "#Los Habitantes #Direcci\xF3n: Homero Bueno #Terror, Thriller #M\xE9xico, 2023,
-    95\u2019 #(Estreno colombiano) #Emiliano regresa a Monterrey luego de tener un
-    accidente, solo para encontrarse cara a cara con los fantasmas de su nueva vida.
-    #Viernes 13 de Octubre \u2013 7:00 p.m. Comfama Otraparte. Entrada con boleta
-    S\xE1bado 14 de Octubre \u2013 2:30 p.m. Centro Colombo Americano Sede Centro.
-    Entrada con Boleta."
+    95\u2019 #(Estreno colombiano)#Emiliano regresa a Monterrey luego de tener un
+    accidente, solo para encontrarse cara a cara con los fantasmas de su nueva vida.#Viernes
+    13 de Octubre \u2013 7:00 p.m. Comfama Otraparte. Entrada con boleta#S\xE1bado
+    14 de Octubre \u2013 2:30 p.m. Centro Colombo Americano Sede Centro. Entrada
+    con Boleta."
 --- !u!1 &136836946
 GameObject:
   m_ObjectHideFlags: 0
