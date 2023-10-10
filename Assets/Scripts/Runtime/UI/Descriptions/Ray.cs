@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Abduction
 {
 
-    public class Ray : MonoBehaviour
+    [AddComponentMenu("Abduction/PosterDectector")]
+    public class PosterDetector: MonoBehaviour
     {
         [SerializeField]
         private int length;
@@ -11,7 +13,18 @@ namespace Abduction
         [Space(4)]
 
         [SerializeField]
+        private LayerMask postersLayer;
+
+        [Space(4)]
+
+        [SerializeField]
         private Camera cam;
+
+        [Space(4)]
+
+        private Image aim;
+
+
 
         private void Update()
         {
@@ -19,9 +32,26 @@ namespace Abduction
 
             position.z = 40f;
 
-            position = cam.ScreenToViewportPoint(position);
+            position = cam.ScreenToWorldPoint(position);
 
+
+#if UNITY_EDITOR 
             Debug.DrawRay(transform.position, position - transform.position, Color.blue);
+#endif
+
+            Ray ray = cam.ScreenPointToRay(position);
+
+            RaycastHit hit;
+
+            if(Physics.Raycast(ray, out hit, length, postersLayer))
+            {
+                Debug.Log("A poster can be activated");
+                // Activate the aim
+            }
+            else
+            {
+                // Erase the input listener
+            }
         }
     }
 }
