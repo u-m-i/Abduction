@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Abduction/Abduction.unity
     guid: 68e82e5aad805504abcb3a8ded2f2a26
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Support.Test/MemFree.unity
     guid: 16db4f2477b456443995d2946fdc9953
   m_configObjects: {}

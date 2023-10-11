@@ -58,10 +58,9 @@ function onProgress( pertecentage )
 {
     if(pertecentage == 1)
     {
-        let container = document.getElementById("unity-container");
+        let container = document.getElementById("build-container");
 
         container.style.animation = "fadeOut .45s forwards";
-
     }
 }
 
@@ -89,14 +88,9 @@ function instantiateBuild()
     let config = createConfiguration();
 
     // Get the canvas object for the build 
-    let canvas = document.querySelector("#unity-canvas");
+    let canvas = document.querySelector("#build-canvas");
 
-    createUnityInstance(canvas, config, onProgress).then((instance) => 
-    {
-
-        instance.SetFullScreen(1);
-
-    });
+    createUnityInstance(canvas, config, onProgress); 
 }
 
 

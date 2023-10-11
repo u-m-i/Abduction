@@ -16,11 +16,6 @@ namespace Abduction
         [Tooltip("Must be a game object, not a uninstantiated prefab.")]
         private GameObject player;
 
-        [Space(4)]
-
-        [SerializeField]
-        private AudioListener bait;
-
         #endregion
 
         private Button button;
@@ -35,8 +30,6 @@ namespace Abduction
 
         private void Begin()
         {
-
-            bait.gameObject.SetActive(false); 
             player.SetActive(true);
             document.gameObject.SetActive(false);
         }
