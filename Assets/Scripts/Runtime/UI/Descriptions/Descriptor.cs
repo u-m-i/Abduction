@@ -8,6 +8,8 @@ namespace Abduction.UI
 {
     public class Descriptor : MonoBehaviour
     {
+        [Header("UI")]
+
         [SerializeField]
         private UIDocument document;
         
@@ -16,14 +18,39 @@ namespace Abduction.UI
         [SerializeField]
         private string[] sources;
 
+        [Header("Player")]
+
+        [SerializeField]
+        private GameObject canvas;
+
+
+        [SerializeField]
+        private FirstPersonMovement character;
+
+
         private const char STOP_SYMBOL = '#';
 
         private const byte SPECIAL_LIMIT = 6;
 
+
+        public void ShowCase(int index)
+        {
+            canvas.SetActive(false);
+
+            character.enabled = false;
+
+            Movie movie = CreateMovieFromText(index);
+
+            gameObject.SetActive(true);            
+
+            SetDescription(movie);
+        }
+
+
         /// <summary>
         /// Sets the description of a movie in the UI
         /// </summary>
-        private void SetDescription(Movie movie)
+        private void SetDescription(in Movie movie)
         {
             FieldInfo[] fields = typeof(Movie).GetFields();
 

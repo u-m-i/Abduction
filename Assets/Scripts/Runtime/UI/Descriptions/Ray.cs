@@ -1,5 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI;
+using Abduction.UI;
+
 
 namespace Abduction
 {
@@ -20,9 +21,17 @@ namespace Abduction
         [SerializeField]
         private Camera cam;
 
+        [Header("User")]
+
         [Space(4)]
 
-        private Image aim;
+        [SerializeField]
+        private CanvasGroup aim;
+
+        [Space(4)]
+
+        [SerializeField]
+        private Descriptor descriptor;
 
 
 
@@ -47,9 +56,15 @@ namespace Abduction
             {
                 Debug.Log("A poster can be activated");
                 // Activate the aim
+                aim.alpha = 1.0f;
+                if(Input.GetMouseButtonDown(0))
+                {
+                    descriptor.ShowCase((int) hit.rigidbody.drag);
+                }
             }
             else
             {
+                aim.alpha = 0.3f;
                 // Erase the input listener
             }
         }
