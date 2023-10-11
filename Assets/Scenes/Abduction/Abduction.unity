@@ -2692,6 +2692,8 @@ GameObject:
   m_Component:
   - component: {fileID: 57817727}
   - component: {fileID: 57817726}
+  - component: {fileID: 57817728}
+  - component: {fileID: 57817729}
   m_Layer: 10
   m_Name: Los Habitantes
   m_TagString: Untagged
@@ -2766,6 +2768,40 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 161.706, z: 0}
+--- !u!65 &57817728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57817725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 57.36704, y: 81.93, z: 0.20000184}
+  m_Center: {x: 0.000030517578, y: -0.000030517578, z: -0.00012207031}
+--- !u!114 &57817729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57817725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 4
 --- !u!1 &58471172
 GameObject:
   m_ObjectHideFlags: 0
@@ -3321,6 +3357,8 @@ GameObject:
   m_Component:
   - component: {fileID: 67370707}
   - component: {fileID: 67370708}
+  - component: {fileID: 67370709}
+  - component: {fileID: 67370710}
   m_Layer: 10
   m_Name: Contact
   m_TagString: Untagged
@@ -3395,6 +3433,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &67370709
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67370706}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.16, y: 30.00558, z: 0.2000006}
+  m_Center: {x: 0, y: 0, z: -0.0000038146973}
+--- !u!114 &67370710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67370706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 19
 --- !u!1 &67429750
 GameObject:
   m_ObjectHideFlags: 0
@@ -5442,7 +5514,6 @@ GameObject:
   - component: {fileID: 132221909}
   - component: {fileID: 132221908}
   - component: {fileID: 132221910}
-  - component: {fileID: 132221911}
   m_Layer: 0
   m_Name: Descriptions
   m_TagString: Untagged
@@ -5495,28 +5566,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uxml: {fileID: 132221908}
---- !u!114 &132221911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 132221906}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00990376968793546b7d9406789575c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  document: {fileID: 132221908}
-  sources:
-  - "#Los Habitantes #Direcci\xF3n: Homero Bueno #Terror, Thriller #M\xE9xico, 2023,
-    95\u2019 #(Estreno colombiano)#Emiliano regresa a Monterrey luego de tener un
-    accidente, solo para encontrarse cara a cara con los fantasmas de su nueva vida.#Viernes
-    13 de Octubre \u2013 7:00 p.m. Comfama Otraparte. Entrada con boleta#S\xE1bado
-    14 de Octubre \u2013 2:30 p.m. Centro Colombo Americano Sede Centro. Entrada
-    con Boleta."
-  canvas: {fileID: 1538097505}
-  character: {fileID: 630791723}
 --- !u!1 &136836946
 GameObject:
   m_ObjectHideFlags: 0
@@ -8307,7 +8356,6 @@ GameObject:
   m_Component:
   - component: {fileID: 196167645}
   - component: {fileID: 196167650}
-  - component: {fileID: 196167648}
   - component: {fileID: 196167647}
   - component: {fileID: 196167646}
   - component: {fileID: 196167651}
@@ -8393,21 +8441,6 @@ MonoBehaviour:
   maxZoomFOV: 15
   currentZoom: 0
   sensitivity: 1
---- !u!114 &196167648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196167644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec72980442fddac4d86e75ab24b4d027, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  character: {fileID: 630791726}
-  sensitivity: 2
-  smoothing: 1.6
 --- !u!20 &196167650
 Camera:
   m_ObjectHideFlags: 0
@@ -8477,7 +8510,7 @@ MonoBehaviour:
     m_Bits: 1024
   cam: {fileID: 196167650}
   aim: {fileID: 1855483824}
-  descriptor: {fileID: 132221911}
+  descriptor: {fileID: 1259376280}
 --- !u!1001 &200885431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10442,7 +10475,8 @@ GameObject:
   m_Component:
   - component: {fileID: 243626107}
   - component: {fileID: 243626106}
-  - component: {fileID: 243626105}
+  - component: {fileID: 243626108}
+  - component: {fileID: 243626109}
   m_Layer: 10
   m_Name: River
   m_TagString: Untagged
@@ -10450,27 +10484,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &243626105
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243626104}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 15.484133, y: 21.869999, z: 0.20000003}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!212 &243626106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10538,6 +10551,40 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 210.968, z: 0}
+--- !u!65 &243626108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243626104}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 15.48414, y: 21.869999, z: 0.20000012}
+  m_Center: {x: 0.000015258789, y: 0, z: -0.0000038146973}
+--- !u!114 &243626109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243626104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
 --- !u!1 &243687479
 GameObject:
   m_ObjectHideFlags: 0
@@ -11111,6 +11158,8 @@ GameObject:
   m_Component:
   - component: {fileID: 258969824}
   - component: {fileID: 258969825}
+  - component: {fileID: 258969826}
+  - component: {fileID: 258969827}
   m_Layer: 10
   m_Name: Signs
   m_TagString: Untagged
@@ -11185,6 +11234,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &258969826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258969823}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.999999, y: 14.259999, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0.000015258789}
+--- !u!114 &258969827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 258969823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 10
 --- !u!1 &259162123
 GameObject:
   m_ObjectHideFlags: 0
@@ -22916,34 +22999,7 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 222.823, z: 0}
---- !u!54 &404409268
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 404409265}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 0
-  m_ImplicitTensor: 0
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &404409269
+--- !u!65 &404409268
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22964,6 +23020,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 8.480003, y: 11.999998, z: 0.20000035}
   m_Center: {x: 0, y: -0.0000076293945, z: -0.0000019073486}
+--- !u!114 &404409269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 404409265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 0
 --- !u!1 &405127154
 GameObject:
   m_ObjectHideFlags: 0
@@ -26829,6 +26898,8 @@ GameObject:
   m_Component:
   - component: {fileID: 513129355}
   - component: {fileID: 513129356}
+  - component: {fileID: 513129357}
+  - component: {fileID: 513129358}
   m_Layer: 10
   m_Name: The J-Horror Virus
   m_TagString: Untagged
@@ -26903,6 +26974,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &513129357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513129354}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.000001, y: 14.16, z: 0.20000033}
+  m_Center: {x: 0.0000038146973, y: -0.0000076293945, z: 0}
+--- !u!114 &513129358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 513129354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 8
 --- !u!1 &515297752
 GameObject:
   m_ObjectHideFlags: 0
@@ -30688,6 +30793,7 @@ GameObject:
   - component: {fileID: 624091407}
   - component: {fileID: 624091406}
   - component: {fileID: 624091405}
+  - component: {fileID: 624091408}
   m_Layer: 10
   m_Name: Pearl
   m_TagString: Untagged
@@ -30783,6 +30889,19 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 148, z: 0}
+--- !u!114 &624091408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624091404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 5
 --- !u!1001 &624620837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31083,7 +31202,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630791720}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f977f53412d81140ab13b3fca57cca2, type: 3}
   m_Name: 
@@ -31164,7 +31283,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630791720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 129.424, y: -25.27, z: -85.37}
+  m_LocalPosition: {x: 12.80572, y: 13.04, z: -10.311}
   m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -35534,6 +35653,8 @@ GameObject:
   m_Component:
   - component: {fileID: 746710945}
   - component: {fileID: 746710946}
+  - component: {fileID: 746710947}
+  - component: {fileID: 746710948}
   m_Layer: 10
   m_Name: Close Encounters of third kind
   m_TagString: Untagged
@@ -35608,6 +35729,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &746710947
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746710944}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 48.209995, y: 67.99868, z: 0.2000007}
+  m_Center: {x: -0.000005722046, y: 0, z: 0.000015258789}
+--- !u!114 &746710948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746710944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 20
 --- !u!1 &748155994
 GameObject:
   m_ObjectHideFlags: 0
@@ -47503,6 +47658,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1034298547}
   - component: {fileID: 1034298548}
+  - component: {fileID: 1034298549}
+  - component: {fileID: 1034298550}
   m_Layer: 10
   m_Name: Door
   m_TagString: Untagged
@@ -47577,6 +47734,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1034298549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034298546}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 35.439995, y: 47.25333, z: 0.20000105}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1034298550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034298546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 17
 --- !u!1 &1035664724
 GameObject:
   m_ObjectHideFlags: 0
@@ -51246,7 +51437,7 @@ GameObject:
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1110103938
 Transform:
   m_ObjectHideFlags: 0
@@ -51262,7 +51453,7 @@ Transform:
   - {fileID: 259162124}
   - {fileID: 1900468666}
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110227092
 GameObject:
@@ -51464,7 +51655,7 @@ Transform:
   - {fileID: 418932515}
   - {fileID: 1889101715}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1117585584
 PrefabInstance:
@@ -52024,6 +52215,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1140134604}
   - component: {fileID: 1140134605}
+  - component: {fileID: 1140134606}
+  - component: {fileID: 1140134607}
   m_Layer: 10
   m_Name: Un Millon de Zombies
   m_TagString: Untagged
@@ -52098,6 +52291,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1140134606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140134603}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.180002, y: 19.85, z: 0.20000003}
+  m_Center: {x: -0.0000038146973, y: 0, z: 0}
+--- !u!114 &1140134607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1140134603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 7
 --- !u!1 &1143552696
 GameObject:
   m_ObjectHideFlags: 0
@@ -53580,6 +53807,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1175892733}
   - component: {fileID: 1175892734}
+  - component: {fileID: 1175892735}
+  - component: {fileID: 1175892736}
   m_Layer: 10
   m_Name: Fire In The Sky
   m_TagString: Untagged
@@ -53654,6 +53883,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1175892735
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175892732}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 19.2, y: 25.6, z: 0.20000008}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1175892736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1175892732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 15
 --- !u!1 &1183434105
 GameObject:
   m_ObjectHideFlags: 0
@@ -55053,6 +55316,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1226599540}
   - component: {fileID: 1226599541}
+  - component: {fileID: 1226599542}
+  - component: {fileID: 1226599543}
   m_Layer: 10
   m_Name: The Exorcist
   m_TagString: Untagged
@@ -55127,6 +55392,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1226599542
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226599539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 10.270004, y: 15, z: 0.20000012}
+  m_Center: {x: 0.0000019073486, y: 0, z: 0}
+--- !u!114 &1226599543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226599539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 9
 --- !u!1 &1228839606
 GameObject:
   m_ObjectHideFlags: 0
@@ -56606,6 +56905,239 @@ Transform:
   - {fileID: 760449932}
   m_Father: {fileID: 187296716}
   m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1259376279
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1259376281}
+  - component: {fileID: 1259376280}
+  m_Layer: 0
+  m_Name: Descriptor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1259376280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259376279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00990376968793546b7d9406789575c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  document: {fileID: 132221908}
+  sources:
+  - "#Viejos #Ra\xFAl Cerezo y Fernando Gonz\xE1lez G\xF3mez #Ciencia Ficci\xF3n
+    #Espa\xF1a, 2022, 95\xB4 #(Estreno colombiano) #Manuel tiene que mudarse a la
+    casa de su hijo Mario y la familia de \xE9ste despu\xE9s de que un terrible suceso
+    acabe con la vida de su anciana mujer. Poco a poco, la realidad se impone: algo
+    incomprensible ocurre con Manuel. Las voces que dice escuchar, las presencias
+    con las que dice hablar. Lena, la mujer de Mario, quiere echarle de la casa:
+    est\xE1 segura de que algo espantoso puede ocurrir. Solo Naia, la hija adolescente,
+    est\xE1 de su parte, pero incluso ella empieza a dudar a medida que los fen\xF3menos
+    extra\xF1os se suceden en torno a su abuelo, cada vez m\xE1s perturbado. Es el
+    verano m\xE1s caluroso de la historia, ha empezado una cuenta atr\xE1s y ya es
+    demasiado tarde para pararla. #Viernes 13 de Octubre. 2:30 p.m. Centro Colombo
+    Americano Sede Centro. Entrada con boleta #Viernes 20 de Octubre \u2013 5:00
+    p.m. Comfama Otraparte. Entrada con Boleta."
+  - "#River #Junta Yamaguchi #Comedia, Ciencia Ficci\xF3n #Jap\xF3n, 2023, 86\u2019
+    #(Estreno Latinoamericano) #Mikoto -una mesera que trabaja en Fujiya- est\xE1
+    descansando junto al rio Kibune durante su trabajo. Los propietarios la llaman
+    y ella regresa al lugar. Sin embargo, dos minutos despu\xE9s, por alguna raz\xF3n,
+    ella se encuentra de nuevo junto al rio Kibune. Pero no solo le ocurre a Mikoto,
+    sino tambi\xE9n al conserje, meseras, cocineros y dem\xE1s hu\xE9spedes del lugar,
+    quienes comienzan a sentir algo extra\xF1o. Despu\xE9s de 2 minutos, el tiempo
+    se resetea y todos retornan donde estaban, aunque su memoria permanece intacta.
+    Ellos est\xE1n en un bucle de dos minutos. Algunos quieren salir del bucle, otros
+    quieren quedarse en \xE9l, sin embargo, todos tienen problemas que necesitan
+    resolver. #S\xE1bado 14 de Octubre \u2013 5:00 p.m. Museo de Arte Moderno de
+    Medell\xEDn. Entrada con Boleta. #Martes 17 de Octubre \u2013 4:00 p.m. Centro
+    Colombo Americano Sede Centro. Entrada con Boleta."
+  - "#Quicksand #Andr\xE9s Beltr\xE1n #Thriller, drama #Colombia, 2023, 86\xB4 #(Estreno
+    suramericano) #Una pareja casada a punto del divorcio queda atrapada en arenas
+    movedizas mientras camina por una selva tropical en Colombia. Luchar\xE1n contra
+    los elementos de la jungla y deber\xE1n trabajar juntos para sobrevivir. #Jueves
+    12 de Octubre. 4:00 p.m. Centro Colombo Americano Sede Centro. Entrada con boleta
+    #Jueves 19 de Octubre \u2013 6:00 p.m. Comfama Otraparte. Entrada con Boleta."
+  - "#La Paradoja de Antares #Luis Tinoco #Ciencia FIcci\xF3n, drama #Espa\xF1a,
+    2022, 97\xB4 #(Estreno colombiano) #Alexandra, cient\xEDfica de guardia de un
+    radiotelescopio, recibe una se\xF1al que podr\xEDa responder a una de las preguntas
+    m\xE1s trascendentales de la humanidad. Solo tiene un par de horas para verificarla,
+    pero un inesperado problema familiar le obligar\xE1 a librar una dram\xE1tica
+    lucha interna en una carrera contra reloj para desvelar uno de los misterios
+    del universo. #Viernes 13 de Octubre. 4:00 p.m. Centro Colombo Americano Sede
+    Centro. Entrada con boleta #Viernes 20 de Octubre \u2013 6:30 p.m. Centro Colombo
+    Americano Sede Centro. Entrada con Boleta."
+  - "#Los Habitantes #Homero Bueno #Terror, Thriller #M\xE9xico, 2023, 95\u2019 #(Estreno
+    colombiano) #Emiliano regresa a Monterrey luego de tener un accidente, solo para
+    encontrarse cara a cara con los fantasmas de su nueva vida. #Viernes 13 de Octubre
+    \u2013 7:00 p.m. Comfama Otraparte. Entrada con boleta #S\xE1bado 14 de Octubre
+    \u2013 2:30 p.m. Centro Colombo Americano Sede Centro. Entrada con Boleta."
+  - "#Pearl #Ti West #Terror #Estados Unidos, 2022, 103\xB4 #(Estreno colombiano
+    \u2013 Pel\xEDcula inaugural) #Atrapada en la granja aislada de su familia, Pearl
+    debe atender a su padre enfermo bajo la amarga y dominante vigilancia de su devota
+    madre, deseando una vida glamurosa como la que ha visto en las pel\xEDculas.
+    Precuela de X (2022) centrada en los or\xEDgenes del personaje de Pearl. #Inauguraci\xF3n
+    \u2013 Mi\xE9rcoles 11 de Octubre \u2013 7:00 p.m. Colombo Americano. Sede Centro.
+    Entrada Libre. #Domingo 15 de Octubre \u2013 6:30 p.m Museo de Arte Moderno de
+    Medell\xEDn. Entrada con boleta."
+  - "#Unidentified Objects #Juan Felipe Zuleta #Drama, Ciencia Ficci\xF3n #Estados
+    Unidos, 2022, 100\xB4 #(Estreno colombiano) #Peter es una persona peque\xF1a,
+    extravagante y mis\xE1ntropo que se esconde del mundo en su destartalado apartamento
+    de Nueva York. Pero una visita inesperada de su vecina optimista, y posiblemente
+    desquiciada, lo obliga a salir de su caparaz\xF3n y emprender un improvisado
+    viaje por carretera. \xBFSu destino? Lo que ella cree que es el sitio de una
+    pr\xF3xima visita extraterrestre en el paisaje rural de Canad\xE1. #Jueves 19
+    de Octubre \u2013 6:30 p.m Museo de Arte Moderno de Medell\xEDn. Entrada con
+    boleta. Funci\xF3n con el equipo de producci\xF3n. #Viernes 20 de Octubre \u2013
+    7:00 p.m. Comfama Otraparte. Entrada con Boleta"
+  - "#Un Mill\xF3n de Zombies \u2013 La Historia de Plaga Zombie #Camilo de Cabo
+    y Nicanor Loreti #Documental #Argentina, 2022, 75\xB4 #(Estreno colombiano) #En
+    el mito fundacional de FARSA Producciones no hay nada que no transmita \xE9pica
+    y ternura. Un grupo de nerds semimarginados de un colegio de Haedo descubren
+    casi por azar que pueden incorporar a sus juegos la realizaci\xF3n de cortometrajes
+    que, con los recursos que tuvieran a mano, imiten esas pel\xEDculas de acci\xF3n
+    y terror que tanto am\xE1n ver en video y cable. De estos juegos nacen Plaga
+    Zombie y su trilog\xEDa, con su invencible cucarda de \u201Cprimera pel\xEDcula
+    de zombis argentina\u201D y como objeto de culto internacional. Pero el documental
+    de Nicanor Loreti y Camilo De Cabo no es solo el relato de la evoluci\xF3n de
+    esta trilog\xEDa y su productora a trav\xE9s de testimonios y recuerdos en VHS,
+    sino tambi\xE9n de los vaivenes de una amistad producto del amor por las tripas
+    y el desprendimiento de masa encef\xE1lica. #Domingo 22 de Octubre. 4:30 p.m.
+    Centro Colombo Americano Sede Centro. Entrada Libre."
+  - "#The J-Horror Virus #Sarah Appleton y Jasper Sharp #Documental #Inglaterra,
+    2023, 95\u2019 #(Estreno colombiano) #Rastreando los or\xEDgenes de las pel\xEDculas
+    de terror japon\xE9s en el cambio del milenio, el documental explora los fantasmas
+    vengativos que se manifiestan a trav\xE9s de la tecnolog\xEDa contempor\xE1nea
+    en un contexto de alienaci\xF3n urbana y decadencia social. #Martes 17 de Octubre.
+    6:00 p.m. Charla Maldiciones Virales y Fantasmas Despeinados \u2013 Una Historia
+    del J Horror.  #7:00 p.m. Proyeci\xF3n del documetal. Centro Colombo Americano
+    Sede Centro. Entrada Libre. #Proyecci\xF3n en alianza con Pulp Movies. "
+  - "#The Exorcist #William Friedkin #Terror #Estados Unidos, 1973, 122\xB4 #Regan,
+    una ni\xF1a de doce a\xF1os, sufre fen\xF3menos paranormales como la levitaci\xF3n
+    o la manifestaci\xF3n de una fuerza sobrehumana. Su madre, aterrorizada, tras
+    someter a su hija a m\xFAltiples an\xE1lisis m\xE9dicos que no ofrecen ning\xFAn
+    resultado, acude a un sacerdote con estudios de psiquiatr\xEDa. \xC9ste, convencido
+    de que el mal no es f\xEDsico sino espiritual, cree que se trata de una posesi\xF3n
+    diab\xF3lica, y decide practicar un exorcismo\u2026 Adaptaci\xF3n de la novela
+    de William Peter Blatty que se inspir\xF3 en un exorcismo real ocurrido en Washington
+    en 1949. #Jueves 19 de Octubre. 6:30 p.m. Funci\xF3n Grindhouse: Selecci\xF3n
+    Oficial de Cortometrajes. #8:30 p.m. Aniversario 50 The Exorcist. Centro Colombo
+    Americano Sede Centro. Entrada gratuita."
+  - "#Signs #M. Night Shyamalan #Thriller #Estados Unidos, 2002, 106\xB4 #Graham
+    Hess es un pastor protestante viudo que vive con sus dos hijos y con su hermano
+    Merrill, una antigua estrella del b\xE9isbol que trabaja en una gasolinera. Tras
+    la muerte de su esposa en un accidente de tr\xE1fico, Graham pierde la fe y,
+    en consecuencia, abandona a sus feligreses. Una ma\xF1ana, al despertarse, se
+    encuentra con que sus hijos han hecho un descubrimiento escalofriante en los
+    campos de ma\xEDz que rodean su granja. #Jueves 19 de Octubre. 7:00 p.m. Universidad
+    Nacional Sede Medell\xEDn. Proyecci\xF3n al aire libre. Entrada gratuita."
+  - "#Pandemonium #Quarxx #Terror, fantas\xEDa #Francia, 2023, 96\xB4 #(Estreno latinoamericano)
+    #Dos extra\xF1os aparentemente sobreviven a un accidente brutal de auto, sin
+    rasgu\xF1os, en un camino solitario al lado de una monta\xF1a. Pero, pronto la
+    verdad es revelada y todo comienza a complicarse. #Viernes 13 de Octubre. 5:00
+    p.m. Comfama Otraparte. Entrada con boleta #Domingo 15 de Octubre \u2013 2:30
+    p.m. Centro Colombo Americano Sede Centro. Entrada con Boleta."
+  - "#Life #Daniel Espinosa #Terror, ciencia ficci\xF3n #Estados Unidos, 2017, 104\xB4
+    #Seis miembros de la tripulaci\xF3n de la Estaci\xF3n Espacial Internacional
+    est\xE1n a punto de lograr uno de los descubrimientos m\xE1s importantes en la
+    historia humana: la primera evidencia de vida extraterrestre en Marte. A medida
+    que el equipo comienza a investigar y sus m\xE9todos tienen consecuencias inesperadas,
+    la forma viviente demostrar\xE1 ser m\xE1s inteligente de lo que cualquiera esperaba.
+    #Jueves 19 de Octubre. 7:00 p.m. Parque de los Deseos. Proyecci\xF3n al aire
+    libre. Entrada gratuita."
+  - "#Kim\u2019s Video #David Redmon y Ashley Sabin #Documental #Estados Unidos,
+    2023, 85\xB4 #(Estreno latinoamericano) #Jugando con las formas y tropos de varios
+    g\xE9neros cinematogr\xE1ficos, los realizadores arman una b\xFAsqueda para encontrar
+    una legendaria colecci\xF3n de videos perdidos de 55,000 pel\xEDculas en Sicilia.
+    #Martes 17 de Octubre. 5:00 p.m. Universidad Nacional Sede Medell\xEDn. Entrada
+    Libre."
+  - "#George Pal: Un Marciano de Hollywood en Argentina #Ramiro San Honorio #Documental
+    #Argentina, 2023, 60\xB4 #(Estreno colombiano) #Un documental que toma como eje
+    central la figura del creador George Pal, desde sus comienzos, con un repaso
+    din\xE1mico de su filmograf\xEDa hasta sus datos menos conocidos de su pasado
+    en Europa y su llegada a Hollywood. Una relato que reivindica al creador e impulsor
+    de un sello \xFAnico, de quien supo ser un faro para muchos realizadores contempor\xE1neos
+    en el \xE1mbito de la animaci\xF3n, el cine fant\xE1stico y la ciencia ficci\xF3n.
+    Otro de los ejes que nuclea la idea del documental son los relatos de los familiares
+    con datos \xFAnicos de su \xE1rbol geneal\xF3gico, que adem\xE1s son los testimonios
+    vivos de la visita in\xE9dita a Buenos Aires. #Mi\xE9rcoles 18 de Octubre. 4:00
+    p.m. Biblioteca EPM. Cinemateca. Entrada Libre."
+  - "#Fire in the Sky #Robert Lieberman #Ciencia Ficci\xF3n #Estados Unidos, 1993,
+    109\xB4 #En 1975, el le\xF1ador Travies Walton y sus compa\xF1eros vieron un
+    OVNI suspendido en el aire. Todos, menos Walton, lograron huir. Mientras tanto,
+    un investigador sospecha que la incre\xEDble historia puede ser la tapadera de
+    un asesinato. #Martes 17 de Octubre. 5:00 p.m. Estaci\xF3n Metrocable Acevedo-
+    El Progreso. #Lanzamiento del libro: La verdad est\xE1 ah\xED fuera. Abducciones,
+    encuentros cercanos y otros fen\xF3menos ufol\xF3gicos en el imaginario audiovisual.
+    #Martes 17 de Octubre. 7:00 p.m. Estaci\xF3n Metrocable Acevedo- El Progreso.
+    Proyecci\xF3n al aire libre. Entrada gratuita."
+  - "#E.T. the extra-terrestrial #Steven Spielberg #Ciencia Ficci\xF3n #Estados Unidos,
+    1982, 115\xB4 #Un peque\xF1o ser de otro planeta se queda abandonado en la Tierra
+    cuando su nave, al emprender el regreso, se olvida de \xE9l. Est\xE1 completamente
+    solo y tiene miedo, pero se har\xE1 amigo de un ni\xF1o, que lo esconde en su
+    casa. El peque\xF1o y sus hermanos intentan encontrar la forma de que el peque\xF1o
+    extraterrestre regrese a su planeta antes de que lo encuentren los cient\xEDficos
+    y la polic\xEDa. #Mi\xE9rcoles 18 de Octubre. 7:00 p.m. Parque de los Deseos.
+    Proyecci\xF3n al aire libre. Entrada gratuita. "
+  - "#Door #Banmei Takahashi #Terror, thriller #Jap\xF3n, 1988, 95\xB4 #(Estreno
+    colombiano) #Despu\xE9s de varias llamadas extra\xF1amente amenazantes de un
+    vendedor local, un ama de casa tiene cada vez m\xE1s miedo de abrir la puerta
+    de su apartamento. #Mi\xE9rcoles de Octubre. 5:30 p.m. Centro Colombo Americano
+    Entrada gratuita. "
+  - "#Cuando Acecha la Maldad  #Pel\xEDcula de Clausura #Demi\xE1n Rugna #Terror
+    #Argentina, Estados Unidos 2023, 99\xB4 #(Estreno latinoamericano) #Dos hermanos
+    descubren un secreto mortal que pudre en su pueblo y pronto se encuentran en
+    una carrera para contener un demonio que amenaza con extinguir su comunidad.
+    #S\xE1bado 21 de Octubre - 7:00pm. Concierto Luces en el Cielo y premiaci\xF3n.
+    Pel\xEDcula de Clausura. Teatro Comfama San Ignacio. Entrada gratuita."
+  - "#Contact #Robert Zemeckis #Ciencia Ficci\xF3n #Estados Unidos, 1997, 150\xB4
+    #Tras la prematura muerte de sus padres siendo una ni\xF1a, Eleanor Arroway perdi\xF3
+    la fe en Dios. Como contrapartida, ha concentrado toda su fe en la investigaci\xF3n:
+    trabaja con un grupo de cient\xEDficos que analizan ondas de radio procedentes
+    del espacio exterior con el fin de encontrar se\xF1ales de inteligencia extraterrestre.
+    Su trabajo se ve recompensado cuando detecta una se\xF1al desconocida que parece
+    contener las instrucciones de fabricaci\xF3n de una m\xE1quina que permitir\xEDa
+    reunirse con los autores del mensaje. #Jueves 19 de Octubre. 6:00 p.m. Teatro
+    Comfama de Aranjuez. Entrada gratuita. "
+  - "#Close Encounters of the Third Kind #Steven Spielberg #Ciencia Ficci\xF3n #Estados
+    Unidos e Inglaterra, 1977, 138\xB4 #(Pel\xEDcula inaugural del tema central)
+    #Una noche, cerca de su casa, en Indiana, Roy Neary observa en el cielo unos
+    misteriosos objetos voladores. Desde entonces vive tan obsesionado por comprender
+    lo que ha visto que se distancia de su esposa. Encuentra apoyo en una mujer que
+    tambi\xE9n ha sido testigo de los mismos hechos, y juntos intentan encontrar
+    una respuesta al misterio que ha alterado sus vidas. Al mismo tiempo, un nutrido
+    grupo de cient\xEDficos internacionales comienza a investigar las apariciones
+    de ovnis y otros extra\xF1os fen\xF3menos en la zona. #Viernes 13 de Octubre.
+    7:00 p.m. Museo de Arte Moderno de Medell\xEDn. Proyecci\xF3n al aire libre.
+    Entrada gratuita."
+  canvas: {fileID: 1538097505}
+  character: {fileID: 630791723}
+  look: {fileID: 630791727}
+--- !u!4 &1259376281
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259376279}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.175, y: 13.9869995, z: -12.638}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1262774337
 PrefabInstance:
@@ -58248,6 +58780,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1285044284}
   - component: {fileID: 1285044285}
+  - component: {fileID: 1285044286}
+  - component: {fileID: 1285044287}
   m_Layer: 10
   m_Name: Pademoniun
   m_TagString: Untagged
@@ -58322,6 +58856,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1285044286
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285044283}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.4699993, y: 8.169999, z: 0.19999997}
+  m_Center: {x: 0.0000076293945, y: 0.0000038146973, z: 0.0000076293945}
+--- !u!114 &1285044287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285044283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 11
 --- !u!1 &1286014164
 GameObject:
   m_ObjectHideFlags: 0
@@ -58406,6 +58974,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1286429056}
   - component: {fileID: 1286429055}
+  - component: {fileID: 1286429057}
+  - component: {fileID: 1286429058}
   m_Layer: 10
   m_Name: Unidentified Objects
   m_TagString: Untagged
@@ -58480,6 +59050,40 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 136, z: 0}
+--- !u!65 &1286429057
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286429054}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 35.080006, y: 49.615906, z: 0.20000212}
+  m_Center: {x: 0, y: -0.000030517578, z: 0}
+--- !u!114 &1286429058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286429054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 6
 --- !u!1 &1287190232
 GameObject:
   m_ObjectHideFlags: 0
@@ -59421,6 +60025,7 @@ GameObject:
   - component: {fileID: 1299918564}
   - component: {fileID: 1299918563}
   - component: {fileID: 1299918562}
+  - component: {fileID: 1299918565}
   m_Layer: 10
   m_Name: La Paradoja De Los Antares
   m_TagString: Untagged
@@ -59516,6 +60121,19 @@ Transform:
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 178.07, z: 0}
+--- !u!114 &1299918565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299918561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 3
 --- !u!95 &1299961772
 Animator:
   serializedVersion: 5
@@ -64699,6 +65317,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1411855155}
   - component: {fileID: 1411855156}
+  - component: {fileID: 1411855157}
+  - component: {fileID: 1411855158}
   m_Layer: 10
   m_Name: Life
   m_TagString: Untagged
@@ -64773,6 +65393,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1411855157
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411855154}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.250004, y: 30.008684, z: 0.20000003}
+  m_Center: {x: 0.000015258789, y: 0, z: -0.000015258789}
+--- !u!114 &1411855158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411855154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 12
 --- !u!1 &1415178495
 GameObject:
   m_ObjectHideFlags: 0
@@ -70767,7 +71421,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1586174658
 PrefabInstance:
@@ -78608,6 +79262,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1802891814}
   - component: {fileID: 1802891815}
+  - component: {fileID: 1802891816}
+  - component: {fileID: 1802891817}
   m_Layer: 10
   m_Name: E.T
   m_TagString: Untagged
@@ -78682,6 +79338,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1802891816
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802891813}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20.48, y: 30.504028, z: 0.2}
+  m_Center: {x: 0, y: -0.000015258789, z: -0.000011444092}
+--- !u!114 &1802891817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802891813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 16
 --- !u!1 &1803797590
 GameObject:
   m_ObjectHideFlags: 0
@@ -82202,7 +82892,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 43.539, z: 0}
 --- !u!65 &1867769949
 BoxCollider:
@@ -84923,6 +85613,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1918839908}
   - component: {fileID: 1918839909}
+  - component: {fileID: 1918839910}
+  - component: {fileID: 1918839911}
   m_Layer: 10
   m_Name: Cuando Acecha la maldad
   m_TagString: Untagged
@@ -84997,6 +85689,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1918839910
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918839907}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 6.11, y: 8.84, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1918839911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918839907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 18
 --- !u!1 &1919540814
 GameObject:
   m_ObjectHideFlags: 0
@@ -85091,6 +85817,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1920719040}
   - component: {fileID: 1920719041}
+  - component: {fileID: 1920719042}
+  - component: {fileID: 1920719043}
   m_Layer: 10
   m_Name: George Pal
   m_TagString: Untagged
@@ -85165,6 +85893,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &1920719042
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920719039}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 47.629997, y: 81.5604, z: 0.19999997}
+  m_Center: {x: -0.000030517578, y: -0.000030517578, z: -0.000030517578}
+--- !u!114 &1920719043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920719039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 14
 --- !u!1 &1921055526
 GameObject:
   m_ObjectHideFlags: 0
@@ -89452,6 +90214,7 @@ GameObject:
   - component: {fileID: 2058680221}
   - component: {fileID: 2058680220}
   - component: {fileID: 2058680222}
+  - component: {fileID: 2058680223}
   m_Layer: 10
   m_Name: Quicksand
   m_TagString: Untagged
@@ -89547,6 +90310,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 81.00003, y: 120.03473, z: 0.20000125}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2058680223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2058680219}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 2
 --- !u!1001 &2064015574
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90655,6 +91431,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2095300357}
   - component: {fileID: 2095300358}
+  - component: {fileID: 2095300359}
+  - component: {fileID: 2095300360}
   m_Layer: 10
   m_Name: Kims Video
   m_TagString: Untagged
@@ -90729,6 +91507,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!65 &2095300359
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095300356}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24.345703, y: 36.000004, z: 0.20000073}
+  m_Center: {x: 0, y: -0.000015258789, z: 0}
+--- !u!114 &2095300360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2095300356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 486a29d56112f1d4f948a7b8913d051b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 13
 --- !u!1 &2095985199
 GameObject:
   m_ObjectHideFlags: 0
@@ -93289,7 +94101,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5301965886789642328}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 24.7, z: 10.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93916,7 +94728,6 @@ GameObject:
   - component: {fileID: 1253365199110817940}
   - component: {fileID: 1253365199111588026}
   - component: {fileID: 1253365199112718970}
-  - component: {fileID: 1253365199110526133}
   m_Layer: 0
   m_Name: Bush01_LOD3
   m_TagString: Untagged
@@ -93924,26 +94735,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!259 &1253365199110526133
-LightProbeProxyVolume:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253365199110526132}
-  m_Enabled: 1
-  m_BoundingBoxMode: 0
-  m_ResolutionX: 2
-  m_ResolutionY: 2
-  m_ResolutionZ: 2
-  m_ResolutionProbesPerUnit: 0.25
-  m_BoundingBoxSize: {x: Infinity, y: Infinity, z: Infinity}
-  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
-  m_ResolutionMode: 0
-  m_ProbePositionMode: 0
-  m_RefreshMode: 0
-  m_QualityMode: 0
-  m_DataFormat: 1
 --- !u!1 &1253365199110526136
 GameObject:
   m_ObjectHideFlags: 0
@@ -93955,7 +94746,6 @@ GameObject:
   - component: {fileID: 1253365199110817944}
   - component: {fileID: 1253365199111588030}
   - component: {fileID: 1253365199112718974}
-  - component: {fileID: 1253365199110526137}
   m_Layer: 0
   m_Name: Bush01_LOD1
   m_TagString: Untagged
@@ -93963,26 +94753,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!259 &1253365199110526137
-LightProbeProxyVolume:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253365199110526136}
-  m_Enabled: 1
-  m_BoundingBoxMode: 0
-  m_ResolutionX: 2
-  m_ResolutionY: 2
-  m_ResolutionZ: 2
-  m_ResolutionProbesPerUnit: 0.25
-  m_BoundingBoxSize: {x: Infinity, y: Infinity, z: Infinity}
-  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
-  m_ResolutionMode: 0
-  m_ProbePositionMode: 0
-  m_RefreshMode: 0
-  m_QualityMode: 0
-  m_DataFormat: 1
 --- !u!1 &1253365199110526138
 GameObject:
   m_ObjectHideFlags: 0
@@ -93994,7 +94764,6 @@ GameObject:
   - component: {fileID: 1253365199110817946}
   - component: {fileID: 1253365199111588024}
   - component: {fileID: 1253365199112718968}
-  - component: {fileID: 1253365199110526139}
   m_Layer: 0
   m_Name: Bush01_LOD2
   m_TagString: Untagged
@@ -94002,26 +94771,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!259 &1253365199110526139
-LightProbeProxyVolume:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253365199110526138}
-  m_Enabled: 1
-  m_BoundingBoxMode: 0
-  m_ResolutionX: 2
-  m_ResolutionY: 2
-  m_ResolutionZ: 2
-  m_ResolutionProbesPerUnit: 0.25
-  m_BoundingBoxSize: {x: Infinity, y: Infinity, z: Infinity}
-  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
-  m_ResolutionMode: 0
-  m_ProbePositionMode: 0
-  m_RefreshMode: 0
-  m_QualityMode: 0
-  m_DataFormat: 1
 --- !u!1 &1253365199110526140
 GameObject:
   m_ObjectHideFlags: 0
@@ -94050,7 +94799,6 @@ GameObject:
   - component: {fileID: 1253365199110817950}
   - component: {fileID: 1253365199111588028}
   - component: {fileID: 1253365199112718972}
-  - component: {fileID: 1253365199110526143}
   m_Layer: 0
   m_Name: Bush01_LOD0
   m_TagString: Untagged
@@ -94058,26 +94806,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!259 &1253365199110526143
-LightProbeProxyVolume:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1253365199110526142}
-  m_Enabled: 1
-  m_BoundingBoxMode: 0
-  m_ResolutionX: 2
-  m_ResolutionY: 2
-  m_ResolutionZ: 2
-  m_ResolutionProbesPerUnit: 0.25
-  m_BoundingBoxSize: {x: Infinity, y: Infinity, z: Infinity}
-  m_BoundingBoxOrigin: {x: 0, y: 0, z: 0}
-  m_ResolutionMode: 0
-  m_ProbePositionMode: 0
-  m_RefreshMode: 0
-  m_QualityMode: 0
-  m_DataFormat: 1
 --- !u!4 &1253365199110817940
 Transform:
   m_ObjectHideFlags: 0

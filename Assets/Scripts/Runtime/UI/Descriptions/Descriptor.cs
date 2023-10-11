@@ -18,32 +18,46 @@ namespace Abduction.UI
         [SerializeField]
         private string[] sources;
 
+        [Space(4)]
+        
         [Header("Player")]
 
         [SerializeField]
         private GameObject canvas;
 
+        [Space(4)]
 
         [SerializeField]
         private FirstPersonMovement character;
 
+        [Space(4)]
+
+        [SerializeField]
+        private FirstPersonLook look;
 
         private const char STOP_SYMBOL = '#';
 
         private const byte SPECIAL_LIMIT = 6;
 
+        private const int MINIMUN_HEIGHT = 160;
 
         public void ShowCase(int index)
         {
+
             canvas.SetActive(false);
 
+            look.enabled =
             character.enabled = false;
+
+            character.speed = 0f;
 
             Movie movie = CreateMovieFromText(index);
 
-            gameObject.SetActive(true);            
+            document.gameObject.SetActive(true);
 
             SetDescription(movie);
+
+            UnityEngine.Cursor.lockState = CursorLockMode.None;
         }
 
 
@@ -58,6 +72,14 @@ namespace Abduction.UI
 
             foreach (FieldInfo field in fields)
             {
+
+                if(field.Name == "Description" && movie.Description.Length < 200)
+                {
+                    Label site = document.rootVisualElement.Q<Label>("Description");
+
+                    site.style.height = MINIMUN_HEIGHT; 
+                }
+
 
                 if (field.Name == "ProjectionSites")
                 {

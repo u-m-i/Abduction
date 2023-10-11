@@ -59,7 +59,8 @@ namespace Abduction
                 aim.alpha = 1.0f;
                 if(Input.GetMouseButtonDown(0))
                 {
-                    descriptor.ShowCase((int) hit.rigidbody.drag);
+                    
+                    descriptor.ShowCase(hit.transform.GetComponent<Poster>().Index - 1);
                 }
             }
             else
