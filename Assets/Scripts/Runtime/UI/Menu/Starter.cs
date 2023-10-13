@@ -23,7 +23,14 @@ namespace Abduction
         [SerializeField]
         private Button starter;
 
+        [Space(4)]
+
+        [SerializeField]
+        private GameObject initialView;
+
         #endregion
+
+        private LoadSceneMode loadMode = LoadSceneMode.Additive;
 
         private float PACE = 0.08f;
 
@@ -48,14 +55,36 @@ namespace Abduction
         {
             StartCoroutine(ShowIndications());
         }
-
+ 
         private IEnumerator ShowIndications()
         {
+            black.blocksRaycasts = true;
+
             while(black.alpha < 1f)
             {
-
+                black.alpha += 0.025f;
+                yield return null;
             }
 
+
+            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(2, loadMode);
+
+            while(!asyncOperation.isDone)
+            {
+                yield return null;
+            }
+
+            // Deactivate the background and the button
+            Destroy(initialView);
+
+            while(black.alpha > 0f)
+            {
+                black.alpha -= 0.025f;
+                yield return null;
+            }
+
+            black.blocksRaycasts = false;
+            
             yield return WriteText(GOAL);
 
             yield return new WaitForSeconds(2.3f);

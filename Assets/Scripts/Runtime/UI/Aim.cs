@@ -4,6 +4,8 @@ using UnityEngine;
 public class Aim : MonoBehaviour
 {
 
+    #region Inspector
+
     [SerializeField]
     private TextMeshProUGUI m_text;
 
@@ -12,8 +14,10 @@ public class Aim : MonoBehaviour
     [SerializeField]
     private CanvasGroup m_cnGroup;
 
+    #endregion
 
     private const float MINIMUN_ALPHA_VALUE = 0.3f; 
+
 
     private void Awake()
     {
@@ -29,15 +33,19 @@ public class Aim : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Ultra fast checking for aim activation, if active then deactives
+    /// </summary>
     public void Deactivate()
     {
         switch(m_cnGroup.alpha)
         {
             case MINIMUN_ALPHA_VALUE:
                 break;
+            // the alpha 1.0f is clue of activation
             case 1.0f:
                 m_text.enabled = false;
-                m_cnGroup.alpha = 0.3f;
+                m_cnGroup.alpha = MINIMUN_ALPHA_VALUE;
                 break;
         }
     }
