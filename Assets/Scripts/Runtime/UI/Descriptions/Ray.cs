@@ -26,7 +26,7 @@ namespace Abduction
         [Space(4)]
 
         [SerializeField]
-        private CanvasGroup aim;
+        private Aim aim;
 
         [Space(4)]
 
@@ -39,34 +39,31 @@ namespace Abduction
         {
             Vector3 position = Input.mousePosition;
 
-            position.z = 40f;
+            position.z = 100f;
 
             position = cam.ScreenToWorldPoint(position);
 
-
-#if UNITY_EDITOR 
             Debug.DrawRay(transform.position, position - transform.position, Color.blue);
-#endif
 
-            Ray ray = cam.ScreenPointToRay(position);
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
 
             RaycastHit hit;
 
             if(Physics.Raycast(ray, out hit, length, postersLayer))
             {
-                Debug.Log("A poster can be activated");
                 // Activate the aim
-                aim.alpha = 1.0f;
+                aim.Activate();
                 if(Input.GetMouseButtonDown(0))
                 {
-                    
-                    descriptor.ShowCase(hit.transform.GetComponent<Poster>().Index - 1);
+                    descriptor.ShowCase(this, hit.transform.GetComponent<Poster>().index);
+
+                    // Make sure still not listening
+                    enabled = false;
                 }
             }
             else
             {
-                aim.alpha = 0.3f;
-                // Erase the input listener
+                aim.Deactivate();
             }
         }
     }

@@ -9,7 +9,7 @@ namespace Nuruk.UI
         private UIDocument uxml;
 
 
-        private void Start()
+        private void PrepareExit()
         {
             VisualElement root = uxml.rootVisualElement;
 

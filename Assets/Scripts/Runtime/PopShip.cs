@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class PopShip : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class PopShip : MonoBehaviour
     [SerializeField]
     private Animator ray;
 
+    private Rigidbody body;
+
 
     private void Awake()
     {
@@ -19,6 +22,7 @@ public class PopShip : MonoBehaviour
         ray.enabled = false;
     }
 
+
     private void OnTriggerEnter(Collider other)
     {
         sphere.SetActive(false);
@@ -26,7 +30,20 @@ public class PopShip : MonoBehaviour
         ray.gameObject.SetActive(true);
         ray.enabled = true;
 
-        other.GetComponent<Rigidbody>().drag = 18;
+        body = other.GetComponent<Rigidbody>();
+
+        StartCoroutine(SlowEffect());
+    }
+
+
+    private IEnumerator SlowEffect()
+    {
+        body.drag = 30;
+
+        yield return new WaitForSeconds(3);
+
         GetComponent<Collider>().isTrigger = false;
+
+        body.drag = 8;
     }
 }

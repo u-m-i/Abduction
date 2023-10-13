@@ -35,29 +35,72 @@ namespace Abduction.UI
         [SerializeField]
         private FirstPersonLook look;
 
+        [Space(4)]
+
+        [SerializeField]
+        private FirstPersonLook innerLook;
+
+
+        [SerializeField]
+        private Rigidbody body;
+
+        private VisualElement Root => document.rootVisualElement;
+
+        private PosterDetector posterDetector;
+
         private const char STOP_SYMBOL = '#';
 
         private const byte SPECIAL_LIMIT = 6;
 
         private const int MINIMUN_HEIGHT = 160;
 
-        public void ShowCase(int index)
+
+
+        public void ShowCase(in PosterDetector posterDetector, int index)
         {
+
+            this.posterDetector = posterDetector;
+
+            body.angularVelocity =
+            body.velocity = Vector3.zero;
 
             canvas.SetActive(false);
 
-            look.enabled =
-            character.enabled = false;
-
             character.speed = 0f;
+
+            innerLook.enabled = 
+            look.enabled = false;
 
             Movie movie = CreateMovieFromText(index);
 
             document.gameObject.SetActive(true);
-
+            PrepareExit();
             SetDescription(movie);
 
             UnityEngine.Cursor.lockState = CursorLockMode.None;
+        }
+
+
+        private void PrepareExit()
+        {
+
+            Button button = Root.Q<Button>("exit-button");
+
+            button.clicked += () => 
+            {
+                character.speed = 5f;
+
+                innerLook.enabled =
+                look.enabled = true;
+
+                canvas.SetActive(true);
+
+                document.gameObject.SetActive(false);
+
+                UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
+                posterDetector.enabled = true;
+            };
         }
 
 
@@ -75,7 +118,7 @@ namespace Abduction.UI
 
                 if(field.Name == "Description" && movie.Description.Length < 200)
                 {
-                    Label site = document.rootVisualElement.Q<Label>("Description");
+                    Label site = Root.Q<Label>("Description");
 
                     site.style.height = MINIMUN_HEIGHT; 
                 }
@@ -85,7 +128,7 @@ namespace Abduction.UI
                 {
                     List<string> projections = (List<string>) field.GetValue(movie);
 
-                    Label site = document.rootVisualElement.Q<Label>("Projections");
+                    Label site = Root.Q<Label>("Projections");
 
                     foreach (string projection in projections)
                     {
@@ -97,7 +140,7 @@ namespace Abduction.UI
                     break;
                 }
 
-                Label label = document.rootVisualElement.Query<Label>().AtIndex(currentLabel);
+                Label label = Root.Query<Label>().AtIndex(currentLabel);
 
                 label.text = "";
                 
@@ -167,15 +210,6 @@ namespace Abduction.UI
             Label label = document.rootVisualElement.Q<Label>(name: "Title", className: "line");
 
             Debug.Log($"The Title content is {label.text}");
-        }
-
-
-        [ContextMenu("Test (Reset the UXML)")]
-        private void Reset()
-        {
-            gameObject.SetActive(false);
-
-            gameObject.SetActive(true);
         }
     }
 }

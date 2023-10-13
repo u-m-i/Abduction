@@ -4,8 +4,7 @@ namespace Abduction
 {
     public class Poster : MonoBehaviour
     {
-        [SerializeField]
-        private int index;
+        public int index;
 
         public int Index => index;
     }

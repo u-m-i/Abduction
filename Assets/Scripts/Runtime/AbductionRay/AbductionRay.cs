@@ -46,8 +46,6 @@ namespace Abduction
                 z = meshRenderer.bounds.center.z
             };
 
-						Animator.StringToHash("something");
-
             debuger.position = criticPoint;
         }
 

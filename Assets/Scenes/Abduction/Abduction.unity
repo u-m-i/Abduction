@@ -2507,7 +2507,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &55698651
 GameObject:
@@ -5551,7 +5551,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &132221910
 MonoBehaviour:
@@ -8359,6 +8359,7 @@ GameObject:
   - component: {fileID: 196167647}
   - component: {fileID: 196167646}
   - component: {fileID: 196167651}
+  - component: {fileID: 196167652}
   m_Layer: 0
   m_Name: First Person Camera
   m_TagString: MainCamera
@@ -8504,13 +8505,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f95d67f6ace6f9d4a91c5eeaafa4665b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  length: 14
+  length: 3
   postersLayer:
     serializedVersion: 2
     m_Bits: 1024
   cam: {fileID: 196167650}
-  aim: {fileID: 1855483824}
+  aim: {fileID: 1855483825}
   descriptor: {fileID: 1259376280}
+--- !u!114 &196167652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196167644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec72980442fddac4d86e75ab24b4d027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 630791726}
+  sensitivity: 2
+  smoothing: 1.5
 --- !u!1001 &200885431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31194,7 +31210,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &630791722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31283,7 +31299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630791720}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.80572, y: 13.04, z: -10.311}
+  m_LocalPosition: {x: 15.32, y: 13.448, z: 2.516}
   m_LocalScale: {x: 0.90000004, y: 0.90000004, z: 0.90000004}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -31293,7 +31309,7 @@ Transform:
   - {fileID: 799560087}
   - {fileID: 946296099}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &630791727
 MonoBehaviour:
@@ -31508,6 +31524,141 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 634391474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &637169077
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 637169078}
+  - component: {fileID: 637169080}
+  - component: {fileID: 637169079}
+  m_Layer: 5
+  m_Name: Right Click
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &637169078
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637169077}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1855483821}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -37.6}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &637169079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637169077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Right click
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &637169080
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 637169077}
+  m_CullTransparentMesh: 1
 --- !u!1001 &641821873
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -47584,70 +47735,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1033785830}
   m_Mesh: {fileID: 4300000, guid: aaf76b55071db41b0bde5e2ebb830601, type: 2}
---- !u!1 &1034027190
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1034027193}
-  - component: {fileID: 1034027192}
-  - component: {fileID: 1034027191}
-  m_Layer: 0
-  m_Name: StartScreen
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1034027191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034027190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b609dffd6e793d4fb02847eb09466a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  document: {fileID: 1034027192}
-  player: {fileID: 630791720}
---- !u!114 &1034027192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034027190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 19102, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PanelSettings: {fileID: 11400000, guid: d585871c435f2174a9e1271341d2ed7d, type: 2}
-  m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: de5ef14350dd53b41b8c7e25efe5fdfe,
-    type: 3}
-  m_SortingOrder: 0
---- !u!4 &1034027193
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1034027190}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034298546
 GameObject:
   m_ObjectHideFlags: 0
@@ -51453,7 +51540,7 @@ Transform:
   - {fileID: 259162124}
   - {fileID: 1900468666}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1110227092
 GameObject:
@@ -51655,7 +51742,7 @@ Transform:
   - {fileID: 418932515}
   - {fileID: 1889101715}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1117585584
 PrefabInstance:
@@ -57023,25 +57110,25 @@ MonoBehaviour:
     6:00 p.m. Charla Maldiciones Virales y Fantasmas Despeinados \u2013 Una Historia
     del J Horror.  #7:00 p.m. Proyeci\xF3n del documetal. Centro Colombo Americano
     Sede Centro. Entrada Libre. #Proyecci\xF3n en alianza con Pulp Movies. "
-  - "#The Exorcist #William Friedkin #Terror #Estados Unidos, 1973, 122\xB4 #Regan,
-    una ni\xF1a de doce a\xF1os, sufre fen\xF3menos paranormales como la levitaci\xF3n
-    o la manifestaci\xF3n de una fuerza sobrehumana. Su madre, aterrorizada, tras
-    someter a su hija a m\xFAltiples an\xE1lisis m\xE9dicos que no ofrecen ning\xFAn
-    resultado, acude a un sacerdote con estudios de psiquiatr\xEDa. \xC9ste, convencido
-    de que el mal no es f\xEDsico sino espiritual, cree que se trata de una posesi\xF3n
-    diab\xF3lica, y decide practicar un exorcismo\u2026 Adaptaci\xF3n de la novela
-    de William Peter Blatty que se inspir\xF3 en un exorcismo real ocurrido en Washington
-    en 1949. #Jueves 19 de Octubre. 6:30 p.m. Funci\xF3n Grindhouse: Selecci\xF3n
-    Oficial de Cortometrajes. #8:30 p.m. Aniversario 50 The Exorcist. Centro Colombo
-    Americano Sede Centro. Entrada gratuita."
-  - "#Signs #M. Night Shyamalan #Thriller #Estados Unidos, 2002, 106\xB4 #Graham
-    Hess es un pastor protestante viudo que vive con sus dos hijos y con su hermano
-    Merrill, una antigua estrella del b\xE9isbol que trabaja en una gasolinera. Tras
-    la muerte de su esposa en un accidente de tr\xE1fico, Graham pierde la fe y,
-    en consecuencia, abandona a sus feligreses. Una ma\xF1ana, al despertarse, se
-    encuentra con que sus hijos han hecho un descubrimiento escalofriante en los
-    campos de ma\xEDz que rodean su granja. #Jueves 19 de Octubre. 7:00 p.m. Universidad
-    Nacional Sede Medell\xEDn. Proyecci\xF3n al aire libre. Entrada gratuita."
+  - "#The Exorcist #William Friedkin #Terror #Estados Unidos, 1973, 122\xB4 #(Viejitas
+    pero bonitas) #Regan, una ni\xF1a de doce a\xF1os, sufre fen\xF3menos paranormales
+    como la levitaci\xF3n o la manifestaci\xF3n de una fuerza sobrehumana. Su madre,
+    aterrorizada, tras someter a su hija a m\xFAltiples an\xE1lisis m\xE9dicos que
+    no ofrecen ning\xFAn resultado, acude a un sacerdote con estudios de psiquiatr\xEDa.
+    \xC9ste, convencido de que el mal no es f\xEDsico sino espiritual, cree que se
+    trata de una posesi\xF3n diab\xF3lica, y decide practicar un exorcismo\u2026
+    Adaptaci\xF3n de la novela de William Peter Blatty que se inspir\xF3 en un exorcismo
+    real ocurrido en Washington en 1949. #Jueves 19 de Octubre. 6:30 p.m. Funci\xF3n
+    Grindhouse: Selecci\xF3n Oficial de Cortometrajes. #8:30 p.m. Aniversario 50
+    The Exorcist. Centro Colombo Americano Sede Centro. Entrada gratuita."
+  - "#Signs #M. Night Shyamalan #Thriller #Estados Unidos, 2002, 106\xB4 #(Viejitas
+    pero bonitas) #Graham Hess es un pastor protestante viudo que vive con sus dos
+    hijos y con su hermano Merrill, una antigua estrella del b\xE9isbol que trabaja
+    en una gasolinera. Tras la muerte de su esposa en un accidente de tr\xE1fico,
+    Graham pierde la fe y, en consecuencia, abandona a sus feligreses. Una ma\xF1ana,
+    al despertarse, se encuentra con que sus hijos han hecho un descubrimiento escalofriante
+    en los campos de ma\xEDz que rodean su granja. #Jueves 19 de Octubre. 7:00 p.m.
+    Universidad Nacional Sede Medell\xEDn. Proyecci\xF3n al aire libre. Entrada gratuita."
   - "#Pandemonium #Quarxx #Terror, fantas\xEDa #Francia, 2023, 96\xB4 #(Estreno latinoamericano)
     #Dos extra\xF1os aparentemente sobreviven a un accidente brutal de auto, sin
     rasgu\xF1os, en un camino solitario al lado de una monta\xF1a. Pero, pronto la
@@ -57049,7 +57136,7 @@ MonoBehaviour:
     p.m. Comfama Otraparte. Entrada con boleta #Domingo 15 de Octubre \u2013 2:30
     p.m. Centro Colombo Americano Sede Centro. Entrada con Boleta."
   - "#Life #Daniel Espinosa #Terror, ciencia ficci\xF3n #Estados Unidos, 2017, 104\xB4
-    #Seis miembros de la tripulaci\xF3n de la Estaci\xF3n Espacial Internacional
+    #() #Seis miembros de la tripulaci\xF3n de la Estaci\xF3n Espacial Internacional
     est\xE1n a punto de lograr uno de los descubrimientos m\xE1s importantes en la
     historia humana: la primera evidencia de vida extraterrestre en Marte. A medida
     que el equipo comienza a investigar y sus m\xE9todos tienen consecuencias inesperadas,
@@ -57083,33 +57170,34 @@ MonoBehaviour:
     #Martes 17 de Octubre. 7:00 p.m. Estaci\xF3n Metrocable Acevedo- El Progreso.
     Proyecci\xF3n al aire libre. Entrada gratuita."
   - "#E.T. the extra-terrestrial #Steven Spielberg #Ciencia Ficci\xF3n #Estados Unidos,
-    1982, 115\xB4 #Un peque\xF1o ser de otro planeta se queda abandonado en la Tierra
-    cuando su nave, al emprender el regreso, se olvida de \xE9l. Est\xE1 completamente
-    solo y tiene miedo, pero se har\xE1 amigo de un ni\xF1o, que lo esconde en su
-    casa. El peque\xF1o y sus hermanos intentan encontrar la forma de que el peque\xF1o
-    extraterrestre regrese a su planeta antes de que lo encuentren los cient\xEDficos
-    y la polic\xEDa. #Mi\xE9rcoles 18 de Octubre. 7:00 p.m. Parque de los Deseos.
-    Proyecci\xF3n al aire libre. Entrada gratuita. "
+    1982, 115\xB4 #(Viejitas pero bonitas) #Un peque\xF1o ser de otro planeta se
+    queda abandonado en la Tierra cuando su nave, al emprender el regreso, se olvida
+    de \xE9l. Est\xE1 completamente solo y tiene miedo, pero se har\xE1 amigo de
+    un ni\xF1o, que lo esconde en su casa. El peque\xF1o y sus hermanos intentan
+    encontrar la forma de que el peque\xF1o extraterrestre regrese a su planeta antes
+    de que lo encuentren los cient\xEDficos y la polic\xEDa. #Mi\xE9rcoles 18 de
+    Octubre. 7:00 p.m. Parque de los Deseos. Proyecci\xF3n al aire libre. Entrada
+    gratuita. "
   - "#Door #Banmei Takahashi #Terror, thriller #Jap\xF3n, 1988, 95\xB4 #(Estreno
     colombiano) #Despu\xE9s de varias llamadas extra\xF1amente amenazantes de un
     vendedor local, un ama de casa tiene cada vez m\xE1s miedo de abrir la puerta
     de su apartamento. #Mi\xE9rcoles de Octubre. 5:30 p.m. Centro Colombo Americano
     Entrada gratuita. "
-  - "#Cuando Acecha la Maldad  #Pel\xEDcula de Clausura #Demi\xE1n Rugna #Terror
-    #Argentina, Estados Unidos 2023, 99\xB4 #(Estreno latinoamericano) #Dos hermanos
+  - "#Cuando Acecha la Maldad #Demi\xE1n Rugna #Terror #Argentina, Estados Unidos
+    2023, 99\xB4 #(Estreno latinoamericano, Pel\xEDcula de Clausura) #Dos hermanos
     descubren un secreto mortal que pudre en su pueblo y pronto se encuentran en
     una carrera para contener un demonio que amenaza con extinguir su comunidad.
     #S\xE1bado 21 de Octubre - 7:00pm. Concierto Luces en el Cielo y premiaci\xF3n.
     Pel\xEDcula de Clausura. Teatro Comfama San Ignacio. Entrada gratuita."
   - "#Contact #Robert Zemeckis #Ciencia Ficci\xF3n #Estados Unidos, 1997, 150\xB4
-    #Tras la prematura muerte de sus padres siendo una ni\xF1a, Eleanor Arroway perdi\xF3
-    la fe en Dios. Como contrapartida, ha concentrado toda su fe en la investigaci\xF3n:
-    trabaja con un grupo de cient\xEDficos que analizan ondas de radio procedentes
-    del espacio exterior con el fin de encontrar se\xF1ales de inteligencia extraterrestre.
-    Su trabajo se ve recompensado cuando detecta una se\xF1al desconocida que parece
-    contener las instrucciones de fabricaci\xF3n de una m\xE1quina que permitir\xEDa
-    reunirse con los autores del mensaje. #Jueves 19 de Octubre. 6:00 p.m. Teatro
-    Comfama de Aranjuez. Entrada gratuita. "
+    #(Viejitas pero bonitas) #Tras la prematura muerte de sus padres siendo una ni\xF1a,
+    Eleanor Arroway perdi\xF3 la fe en Dios. Como contrapartida, ha concentrado toda
+    su fe en la investigaci\xF3n: trabaja con un grupo de cient\xEDficos que analizan
+    ondas de radio procedentes del espacio exterior con el fin de encontrar se\xF1ales
+    de inteligencia extraterrestre. Su trabajo se ve recompensado cuando detecta
+    una se\xF1al desconocida que parece contener las instrucciones de fabricaci\xF3n
+    de una m\xE1quina que permitir\xEDa reunirse con los autores del mensaje. #Jueves
+    19 de Octubre. 6:00 p.m. Teatro Comfama de Aranjuez. Entrada gratuita. "
   - "#Close Encounters of the Third Kind #Steven Spielberg #Ciencia Ficci\xF3n #Estados
     Unidos e Inglaterra, 1977, 138\xB4 #(Pel\xEDcula inaugural del tema central)
     #Una noche, cerca de su casa, en Indiana, Roy Neary observa en el cielo unos
@@ -57124,6 +57212,8 @@ MonoBehaviour:
   canvas: {fileID: 1538097505}
   character: {fileID: 630791723}
   look: {fileID: 630791727}
+  innerLook: {fileID: 196167652}
+  body: {fileID: 630791724}
 --- !u!4 &1259376281
 Transform:
   m_ObjectHideFlags: 0
@@ -57137,7 +57227,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1262774337
 PrefabInstance:
@@ -69419,7 +69509,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
@@ -71421,7 +71511,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1586174658
 PrefabInstance:
@@ -75529,7 +75619,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1703780930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75638,7 +75728,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1706056923
 GameObject:
@@ -81942,6 +82032,7 @@ GameObject:
   - component: {fileID: 1855483823}
   - component: {fileID: 1855483822}
   - component: {fileID: 1855483824}
+  - component: {fileID: 1855483825}
   m_Layer: 5
   m_Name: Aim
   m_TagString: Untagged
@@ -81960,7 +82051,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 637169078}
   m_Father: {fileID: 1538097506}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -82019,6 +82111,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1855483825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855483820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 662fab32927cd5648be1361220efd99e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_text: {fileID: 637169079}
+  m_cnGroup: {fileID: 1855483824}
 --- !u!1 &1855692170
 GameObject:
   m_ObjectHideFlags: 0
@@ -82892,7 +82998,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 43.539, z: 0}
 --- !u!65 &1867769949
 BoxCollider:
@@ -82913,8 +83019,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6424359, y: 10.877239, z: 92.3262}
-  m_Center: {x: -0.32430443, y: 3.4530735, z: 10.365677}
+  m_Size: {x: 1.642436, y: 12.12714, z: 92.3262}
+  m_Center: {x: -0.32434523, y: 2.828123, z: 10.365677}
 --- !u!114 &1867769950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85629,14 +85735,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918839907}
-  m_LocalRotation: {x: -0, y: -0.38977295, z: -0, w: 0.920911}
-  m_LocalPosition: {x: -7.36772, y: -3.7923393, z: 7.42059}
+  m_LocalRotation: {x: -0, y: -0.3717628, z: -0, w: 0.92832774}
+  m_LocalPosition: {x: -7.424, y: -3.7923393, z: 7.613}
   m_LocalScale: {x: 0.276, y: 0.276, z: 0.276}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 543450652442275906}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: -45.881, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -43.649, z: 0}
 --- !u!212 &1918839909
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -91911,7 +92017,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2111511329
 PrefabInstance:
