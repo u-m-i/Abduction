@@ -1,32 +1,25 @@
 using UnityEngine;
 
-public class Transition : MonoBehaviour
-{
-    [SerializeField]
-    private AudioSource audioSource;
-
-    [Space(3)]
-
-    [SerializeField]
-    private AnimationCurve transitionCurve;
-
-
-    private const float EPSILON = 0.2121f;
-
-    private float incrementalTime = 0f;
-
-
-    private void Awake() =>
-        audioSource.volume = 0.0f;
-
-
-    private void Update()
+namespace Abduction.Audio
+{ 
+    public class Transition : MonoBehaviour
     {
-        if(audioSource.volume <= 1.0f)
+        [SerializeField]
+        private Animator animator;
+
+        private const string TRIGGER_NAME = "Change";
+
+
+        private void Awake()
         {
-            audioSource.volume = transitionCurve.Evaluate(incrementalTime);
-            incrementalTime += EPSILON * Time.deltaTime;
+            Debug.Assert(animator != null, "Remember assing an animator");
         }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            animator.SetTrigger(TRIGGER_NAME);
+        }
+
     }
 }
 
