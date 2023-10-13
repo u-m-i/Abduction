@@ -81,7 +81,7 @@ namespace Abduction
         private IEnumerator Abduct()
         {
 
-            pad = new Vector3(0.035f, 0.15f, 0.035f);
+            pad = new Vector3(0.035f, 0.06f, 0.035f);
 
             // Create the compensatory value for the x and z value
             
