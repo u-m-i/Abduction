@@ -25,6 +25,8 @@ namespace Abduction
 
         #endregion
 
+        private float PACE = 0.08f;
+
         private const string GOAL = "Explora para encontrar la nave";
 
         private const string HELP = "Camina con WASD y corre con SHIFT sostenido";
@@ -44,21 +46,21 @@ namespace Abduction
 
         private void PassScene()
         {
-            // Add layer
+            StartCoroutine(ShowIndications());
+        }
 
+        private IEnumerator ShowIndications()
+        {
             while(black.alpha < 1f)
             {
-                black.alpha += 0.025f;
+
             }
 
-            // Load the scene additively
-            AsyncOperation aop = SceneManager.LoadSceneAsync(2, LoadSceneMode.Additive);
+            yield return WriteText(GOAL);
 
-            // Wait until done
-            while (!aop.isDone) ;
+            yield return new WaitForSeconds(2.3f);
 
-
-            StartCoroutine(Indication());
+            yield return WriteText(HELP);
         }
 
 
@@ -66,10 +68,19 @@ namespace Abduction
         /// Prints a text with a stylish animation 
         /// </summary>
         /// <returns></returns>
-        private IEnumerator Indication()
+        private IEnumerator WriteText(string text)
         {
-            // Deactivate the curtain
-            yield return null;
+            indication.text = "";
+
+            int index = 0;
+
+            while(index < text.Length)
+            {
+                indication.text += text[index]; 
+                ++index;
+
+                yield return new WaitForSeconds(PACE);
+            }
         }
     }
 }
